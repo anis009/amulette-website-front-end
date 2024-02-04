@@ -78,7 +78,7 @@ export const productsData = [
     price: 50.0,
   },
   {
-    id: 1,
+    id: 2,
     title: "Amulette Charger",
     img: "Images/OurProducts/Amulette-Charger.svg",
     images: [
@@ -156,7 +156,7 @@ export const productsData = [
     price: 10.0,
   },
   {
-    id: 1,
+    id: 3,
     title: "Amulette Cover Case",
     img: "Images/OurProducts/Amulette-Cover.svg",
     images: [
@@ -234,7 +234,7 @@ export const productsData = [
     price: 20.0,
   },
   {
-    id: 1,
+    id: 4,
     title: "Amulette Combo Deal",
     img: "Images/OurProducts/Amulette-Combo.svg",
     images: [
@@ -310,5 +310,159 @@ export const productsData = [
       },
     ],
     price: 65.0,
+  },{
+    id: 5,
+    title: "Amulette Cover Case",
+    img: "Images/OurProducts/Amulette-Cover.svg",
+    images: [
+      {
+        id: 1,
+        image: "Images/OurProducts/Amulette-Cover.svg",
+      },
+      {
+        id: 2,
+        image: "Images/OurProducts/Amulette-Cover.svg",
+      },
+      {
+        id: 3,
+        image: "Images/OurProducts/Amulette-Cover.svg",
+      },
+      {
+        id: 4,
+        image: "Images/OurProducts/Amulette-Cover.svg",
+      },
+      {
+        id: 5,
+        image: "Images/OurProducts/Amulette-Cover.svg",
+      },
+    ],
+    shortDescription: `Protect and stylize your Amulette with our ...`,
+    descriptions: [
+      {
+        id: "1",
+        description:
+          "Seamlessly pair with your smartphone via Bluetooth for easy image transfer.",
+      },
+      {
+        id: "2",
+        description:
+          "Compact and lightweight, the Amulette Device attaches easily to any surface, turning it into a canvas for your creativity.",
+      },
+      {
+        id: "3",
+        description:
+          "Choose from your photo library to display images that reflect your mood, experiences, and passions.",
+      },
+      {
+        id: "4",
+        description:
+          "Crystal-clear image quality ensures your photos look vibrant and sharp, enhancing the visual impact of your wearable art.",
+      },
+    ],
+    specification: [
+      {
+        id: "1",
+        name: "Product Dimensions",
+        value: "3cm x 3cm x 0.5cm",
+      },
+      {
+        id: "2",
+        name: "Weight",
+        value: "12 Gram",
+      },
+      {
+        id: "3",
+        name: "Base Material",
+        value: "Carbon Steel",
+      },
+      {
+        id: "4",
+        name: "Stape",
+        value: "Square",
+      },
+      {
+        id: "5",
+        name: "Color",
+        value: "Black",
+      },
+    ],
+    price: 20.0,
+  },{
+    id: 6,
+    title: "Amulette Cover Case",
+    img: "Images/OurProducts/Amulette-Cover.svg",
+    images: [
+      {
+        id: 1,
+        image: "Images/OurProducts/Amulette-Cover.svg",
+      },
+      {
+        id: 2,
+        image: "Images/OurProducts/Amulette-Cover.svg",
+      },
+      {
+        id: 3,
+        image: "Images/OurProducts/Amulette-Cover.svg",
+      },
+      {
+        id: 4,
+        image: "Images/OurProducts/Amulette-Cover.svg",
+      },
+      {
+        id: 5,
+        image: "Images/OurProducts/Amulette-Cover.svg",
+      },
+    ],
+    shortDescription: `Protect and stylize your Amulette with our ...`,
+    descriptions: [
+      {
+        id: "1",
+        description:
+          "Seamlessly pair with your smartphone via Bluetooth for easy image transfer.",
+      },
+      {
+        id: "2",
+        description:
+          "Compact and lightweight, the Amulette Device attaches easily to any surface, turning it into a canvas for your creativity.",
+      },
+      {
+        id: "3",
+        description:
+          "Choose from your photo library to display images that reflect your mood, experiences, and passions.",
+      },
+      {
+        id: "4",
+        description:
+          "Crystal-clear image quality ensures your photos look vibrant and sharp, enhancing the visual impact of your wearable art.",
+      },
+    ],
+    specification: [
+      {
+        id: "1",
+        name: "Product Dimensions",
+        value: "3cm x 3cm x 0.5cm",
+      },
+      {
+        id: "2",
+        name: "Weight",
+        value: "12 Gram",
+      },
+      {
+        id: "3",
+        name: "Base Material",
+        value: "Carbon Steel",
+      },
+      {
+        id: "4",
+        name: "Stape",
+        value: "Square",
+      },
+      {
+        id: "5",
+        name: "Color",
+        value: "Black",
+      },
+    ],
+    price: 20.0,
   },
 ];

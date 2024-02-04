@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ProductCard from "./ProductCard";
@@ -10,6 +10,7 @@ import NextButtonCustomEB from "../../NextPrevButton/NextButtonCustomEB";
 import { productsData } from "./ProductData";
 import ProductDetailsPage from "../../../pages/ProductDetailsPage";
 import { BsXCircle } from "react-icons/bs";
+import React from "react";
 const OurProducts = ({ isOurProduct = true }) => {
 	const [isPrevDisabled, setIsPrevDisabled] = useState(true);
 	const [isNextDisabled, setIsNextDisabled] = useState(false);
@@ -36,6 +37,12 @@ const OurProducts = ({ isOurProduct = true }) => {
 			items: 1,
 		},
 	};
+
+	useEffect(() => {
+		console.log('productData: ', productsData)
+	}, [])
+
+
 	return (
 		<div className="our-products-wrapper mt-[52px]">
 			<div className="our-products  max-w-amulette lg:px-amulette mx-auto px-5 ">
@@ -46,7 +53,7 @@ const OurProducts = ({ isOurProduct = true }) => {
 					</h1>
 				)}
 
-				<div className="carousel-container relative hidden lg:block">
+				<div className="carousel-container relative hidden lg:block mb-10 ">
 					<PrevButtonCustomCF prevRef={prevRef} disabled={isPrevDisabled} />
 					<NextButtonCustomEB nextRef={nextRef} disabled={isNextDisabled} />
 
@@ -71,16 +78,16 @@ const OurProducts = ({ isOurProduct = true }) => {
 						//   deviceType={this.props.deviceType}
 
 						dotListClass="custom-dot-list-style"
-						itemClass="carousel-item-padding-40-px mx-2"
+						// itemClass="carousel-item-padding-40-px mx-2"
 						customLeftArrow={<PrevButton prevRef={prevRef} />}
 						customRightArrow={<NextButton nextRef={nextRef} />}
 						beforeChange={(nextSlide) => {
 							console.log("beforeChange nextSlide: ", nextSlide);
 							setIsPrevDisabled(nextSlide === 0);
-							setIsNextDisabled(nextSlide === 2);
+							setIsNextDisabled(nextSlide === 4);
 						}}
 						centerMode={false}
-						containerClass="pb-10 w-full "
+						containerClass="w-full "
 						// renderButtonGroupOutside
 					>
 						{productsData?.map((data, index) => (
@@ -96,11 +103,12 @@ const OurProducts = ({ isOurProduct = true }) => {
 							<div className="w-[300px]"></div>
 						)}
 					</Carousel>
-					<div className="flex flex-row items-center justify-center mt-10">
-						<button className="px-8 py-4 cursor-pointer hover:bg-primaryColor hover:text-white text-primaryColor border-2 border-primaryColor rounded-[10px]">
-							View ALL Products
-						</button>
-					</div>
+					
+				</div>
+				<div className="flex flex-row items-center justify-center mt-10">
+					<button className="px-8 py-4 cursor-pointer hover:bg-primaryColor hover:text-white text-primaryColor border-2 border-primaryColor rounded-[10px]">
+						View ALL Products
+					</button>
 				</div>
 				<div className="mobile-product-wrapper block lg:hidden ">
 					<div className="mobile-product-grid lg:hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 ">
