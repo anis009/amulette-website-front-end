@@ -5,23 +5,25 @@ import { IoSearchSharp } from "react-icons/io5";
 import ProductNotFound from "../components/ProductNotFound";
 import { BsXCircle } from "react-icons/bs";
 import ProductDetailsPage from "./ProductDetailsPage";
+import React from "react";
 const ProductsPage = () => {
 	const [productSearchTitle, setProductSearchTitle] = useState("");
 	const [sortOption, setSortOption] = useState("");
 	const [showModal, setShowModal] = useState(false);
-	const filteredProducts = useMemo(() => {
-		let filtered = productsData.filter((product) =>
-			product.title.toLowerCase().includes(productSearchTitle.toLowerCase())
-		);
+	const filteredProducts = []// 
+	// 	useMemo(() => {
+	// 	let filtered = productsData.filter((product) =>
+	// 		product.title.toLowerCase().includes(productSearchTitle.toLowerCase())
+	// 	);
 
-		if (sortOption === "low-to-high") {
-			filtered.sort((a, b) => a.price - b.price);
-		} else if (sortOption === "high-to-low") {
-			filtered.sort((a, b) => b.price - a.price);
-		}
+	// 	if (sortOption === "low-to-high") {
+	// 		filtered.sort((a, b) => a.price - b.price);
+	// 	} else if (sortOption === "high-to-low") {
+	// 		filtered.sort((a, b) => b.price - a.price);
+	// 	}
 
-		return filtered;
-	}, [productSearchTitle, sortOption]);
+	// 	return filtered;
+	// }, [productSearchTitle, sortOption]);
 
 	return (
 		<>
@@ -48,7 +50,7 @@ const ProductsPage = () => {
 						<select
 							value={sortOption}
 							onChange={(e) => setSortOption(e.target.value)}
-							className="w-1/4 lg:w-auto border border-primaryColor px-2 lg:px-5 py-2 lg:py-2.5  rounded-full"
+							className="w-1/4 lg:w-auto border border-primaryColor px-2 lg:px-4 py-2 lg:py-3.5  rounded-full"
 						>
 							<option disabled value="Sort by">
 								Sort By: Price low to high

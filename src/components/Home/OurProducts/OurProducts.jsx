@@ -105,7 +105,7 @@ const OurProducts = ({ isOurProduct = true }) => {
 					</Carousel>
 					
 				</div>
-				<div className="flex flex-row items-center justify-center mt-10">
+				<div className="hidden lg:flex flex-row items-center justify-center mt-10 ">
 					<button className="px-8 py-4 cursor-pointer hover:bg-primaryColor hover:text-white text-primaryColor border-2 border-primaryColor rounded-[10px]">
 						View ALL Products
 					</button>

@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import PhotosLibrarySidebar from "./PhotosLibrarySidebar/PhotosLibrarySidebar";
 import { photos } from "./PhotoData";
 import { useSelector } from "react-redux";
+import React from "react";
 
 const PhotosLibrary = () => {
 	const [sideBarOpen, setSideBarOpen] = useState(false);
@@ -61,13 +62,13 @@ const PhotosLibrary = () => {
 
 	return (
 		<div className="photos-library-wrapper ">
-			<div className="containerr max-w-amulette lg:px-amulette flex flex-col items-start justify-between mx-auto md:space-x-8 md:px-0 px-0 md:bg-white bg-[#fdfdfd] photos-library md:flex-row">
-				<div className="col-left lg:w-1/3 px-9 py-8 md:block hidden rounded-3xl border border-[#979898]">
+			<div className="containerr max-w-amulette lg:px-amulette flex flex-col items-start justify-between mx-auto md:space-x-8 md:px-0 px-5 md:bg-white bg-[#fdfdfd] photos-library md:flex-row">
+				<div className="col-left lg:w-1/3 px-7 py-7 md:block hidden rounded-3xl border border-[#979898]">
 					<License />
-					<Category />
+					<Category photosLibrarySidebar={false} />
 				</div>
 
-				<div className="col-right w-full lg:w-2/3 md:rounded-3xl  md:border border-[#979898] px-11 py-7">
+				<div className="col-right w-full lg:w-2/3 md:rounded-3xl  md:border border-[#979898] px-7 py-7">
 					<h3 className="text-xl lg:text-[25px] font-bold">
 						<span className="text-[#25282B">Explore</span>
 						<span className="text-primaryColor"> Diverse Photos</span>
@@ -77,7 +78,7 @@ const PhotosLibrary = () => {
 						landscapes to adorable pets, discover a world of creativity and
 						inspiration.
 					</p>
-					<div className="relative flex items-center justify-between search-wrapper mt-7">
+					<div className="relative flex items-center justify-between search-wrapper mt-6">
 						<PhotosLibrarySidebar
 							sideBarHandler={sideBarHandler}
 							sideBarOpen={sideBarOpen}
@@ -85,12 +86,12 @@ const PhotosLibrary = () => {
 
 						<div
 							onClick={sideBarHandler}
-							className="block md:hidden px-6 py-4 h-[50px] bg-primaryColor rounded-2xl cursor-pointer "
+							className="block md:hidden px-4 py-2 bg-primaryColor rounded-full cursor-pointer "
 						>
-							<HiAdjustmentsHorizontal className="w-6 h-6 text-white" />
+							<HiAdjustmentsHorizontal className="w-8 h-8 text-white" />
 						</div>
 
-						<div className="search border w-full flex md:ml-0 ml-3 flex-row items-center justify-start space-x-2.5 border-[#DADADA] rounded-3xl px-4 py-3 h-[50px]">
+						<div className="search border w-full flex md:ml-0 ml-3 flex-row items-center justify-start space-x-2.5 border-[#DADADA] rounded-3xl px-6 py-3  ">
 							<IoSearchSharp color="#F65F19" size={18} />{" "}
 							<input
 								onChange={(e) => setSearchKeyword(e.target.value)}
@@ -102,7 +103,7 @@ const PhotosLibrary = () => {
 						</div>
 					</div>
 					{/* photos section */}
-					<div className="grid grid-cols-2 sm:grid-cols-3 gap-8 md:grid-cols-4  mt-9">
+					<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mt-6">
 						{filteredPhotos?.map((photo, index) => (
 							<PhotoCard key={index} photo={photo} />
 						))}
@@ -115,3 +116,4 @@ const PhotosLibrary = () => {
 };
 
 export default PhotosLibrary;
+// 

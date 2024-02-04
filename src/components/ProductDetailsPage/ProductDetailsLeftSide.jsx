@@ -6,6 +6,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import React from "react";
 const ProductDetailsLeftSide = () => {
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
