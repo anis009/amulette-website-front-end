@@ -10,20 +10,19 @@ const ProductsPage = () => {
 	const [productSearchTitle, setProductSearchTitle] = useState("");
 	const [sortOption, setSortOption] = useState("");
 	const [showModal, setShowModal] = useState(false);
-	const filteredProducts = []// 
-	// 	useMemo(() => {
-	// 	let filtered = productsData.filter((product) =>
-	// 		product.title.toLowerCase().includes(productSearchTitle.toLowerCase())
-	// 	);
+	const filteredProducts = useMemo(() => {
+		let filtered = productsData.filter((product) =>
+			product.title.toLowerCase().includes(productSearchTitle.toLowerCase())
+		);
 
-	// 	if (sortOption === "low-to-high") {
-	// 		filtered.sort((a, b) => a.price - b.price);
-	// 	} else if (sortOption === "high-to-low") {
-	// 		filtered.sort((a, b) => b.price - a.price);
-	// 	}
+		if (sortOption === "low-to-high") {
+			filtered.sort((a, b) => a.price - b.price);
+		} else if (sortOption === "high-to-low") {
+			filtered.sort((a, b) => b.price - a.price);
+		}
 
-	// 	return filtered;
-	// }, [productSearchTitle, sortOption]);
+		return filtered;
+	}, [productSearchTitle, sortOption]);
 
 	return (
 		<>
