@@ -1,3 +1,5 @@
+import React from "react";
+
 const ContactUs = () => {
 	return (
 		<div
@@ -13,7 +15,7 @@ const ContactUs = () => {
 				</h1>
 				<div className="flex flex-row items-center justify-center amulette-assist-wrapper">
 					<div className="amulette-assist flex flex-row items-center justify-start bg-white border-[1px] border-[#D9D9D9] space-x-3 rounded-full px-2.5 py-2 mt-10">
-						<span className="bg-primaryColor text-white font-semibold text-center text-xs sm:text-xs px-6 lg:px-10 py-1.5 rounded-full">
+						<span className="bg-primaryColor text-white font-semibold text-center px-6 lg:px-10 py-1.5 rounded-2xl">
 							Amulette
 						</span>{" "}
 						<span className=""> Is happy to assist you!</span>
@@ -30,30 +32,41 @@ const ContactUs = () => {
 									Email
 									<sup className="text-[#FF5551] font-semibold text-sm">*</sup>
 								</label>
-								<input
-									className="w-full mt-2.5 px-5 py-5 border border-[#E0E0E0] rounded-[10px]"
-									type="email"
-									name=""
-									placeholder="example@gmail.com"
-								/>
+								<div className="w-full mt-2.5 px-5 py-5 border border-[#E0E0E0] bg-white rounded-[10px] flex space-x-3">
+									<img src="Images/ContactUs/mail.svg" width={20} />
+									<input
+										className="w-full"
+										type="email"
+										name=""
+										placeholder="example@gmail.com"
+									/>
+								</div>
+								
 							</div>
 							<div className="subject-wrapper flex flex-col items-start justify-start w-full lg:w-[85%]">
 								<label className="">
 									Subject
 									<sup className="text-[#FF5551] font-semibold text-sm">*</sup>
 								</label>
-								<select className="w-full mt-2.5 px-5 py-5 border border-[#E0E0E0] rounded-[10px]">
-									<option disabled> select from here</option>
-									<option value={"purchases"}> Purchases</option>
-								</select>
+								<div className="w-full mt-2.5 px-5 py-5 border border-[#E0E0E0] bg-white rounded-[10px] flex space-x-3">
+									<img src="Images/ContactUs/bar_chart.svg" width={20} />
+									<select className="w-full">
+										<option disabled>Select from here</option>
+										<option value={"purchases"}>Purchases</option>
+									</select>
+								</div>
 							</div>
 							<div className="message-wrapper flex flex-col items-start justify-start w-full lg:w-[85%]">
 								<label className="">Message</label>
-								<textarea
-									rows={5}
-									cols={90}
-									className="w-full mt-2.5 px-5 py-5 border border-[#E0E0E0] rounded-[10px]"
-								></textarea>
+								<div className="w-full mt-2.5 px-5 py-5 border border-[#E0E0E0] bg-white rounded-[10px] flex space-x-3 items-start">
+									<img src="Images/ContactUs/chat.svg" className="mt-1" width={20} />
+									<textarea
+										rows={5}
+										cols={90}
+										className=""
+										placeholder="Type Here"
+									></textarea>
+								</div>
 							</div>
 							<div className="pt-2 button-wrapper lg:pb-0 pb-5">
 								<button
