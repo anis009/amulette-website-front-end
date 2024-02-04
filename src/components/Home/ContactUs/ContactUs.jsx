@@ -22,7 +22,7 @@ const ContactUs = () => {
 					</div>
 				</div>
 				<div className="contact-form-row flex  flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-between lg:space-x-[206px] lg:mt-[68px]">
-					<div className="w-full lg:w-1/2 col-left">
+					<div className="w-full lg:w-1/2 col-left my-10 lg:my-0">
 						<img src="Images/ContactUs/Contact-Us-Img.svg" width={615} />
 					</div>
 					<div className="flex flex-row items-center justify-start w-full lg:w-1/2 col-right">
@@ -62,7 +62,6 @@ const ContactUs = () => {
 									<img src="Images/ContactUs/chat.svg" className="mt-1" width={20} />
 									<textarea
 										rows={5}
-										cols={90}
 										className=""
 										placeholder="Type Here"
 									></textarea>

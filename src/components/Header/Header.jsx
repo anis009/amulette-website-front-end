@@ -4,13 +4,21 @@ import { RiMenu5Fill } from "react-icons/ri";
 import { IoCloseSharp } from "react-icons/io5";
 
 import DesktopHeader from "./DesktopHeader";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MobileMenu from "./MobileMenu";
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const [lang, setLang] = useState("english");
+
+	// scroll to the top at every path changes
+	const { pathname } = useLocation();
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [pathname])
+
 	return (
 		<div className="header-wrapper z-50 sticky top-0 left-0 bg-white shadow-md select-none">
 			<DesktopHeader />
