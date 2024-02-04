@@ -6,15 +6,22 @@ import { IoCloseSharp } from "react-icons/io5";
 import DesktopHeader from "./DesktopHeader";
 import { useState } from "react";
 import MobileMenu from "./MobileMenu";
+import React from "react";
 
 const Header = () => {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const [lang, setLang] = useState("english");
 	return (
-		<div className="header-wrapper z-50 sticky top-0 left-0 bg-white shadow-md">
+		<div className="header-wrapper z-50 sticky top-0 left-0 bg-white shadow-md select-none">
 			<DesktopHeader />
-			<div className="mobile-header bg-white lg:hidden flex flex-row items-center justify-between px-5 py-4 shadow-md">
-				<div className="col-left">
+			<div className="mobile-header lg:hidden flex flex-row items-center justify-between px-5 py-4 shadow-md">
+				<div
+					className="col-left"
+					onClick={(e) => {
+						console.log('header-icon: ', e.target)
+						setIsMobileMenuOpen(!isMobileMenuOpen)
+					}}
+				>
 					{isMobileMenuOpen && (
 						<IoCloseSharp
 							onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -23,7 +30,7 @@ const Header = () => {
 					)}
 					{!isMobileMenuOpen && (
 						<RiMenu5Fill
-							onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+							
 							size={26}
 						/>
 					)}
@@ -63,12 +70,12 @@ const Header = () => {
 					</div>
 				</div>
 			</div>
-			{isMobileMenuOpen && (
+			{/* {isMobileMenuOpen && ( */}
 				<MobileMenu
 					isMobileMenuOpen={isMobileMenuOpen}
 					setIsMobileMenuOpen={setIsMobileMenuOpen}
 				/>
-			)}
+			{/* )} */}
 		</div>
 	);
 };
