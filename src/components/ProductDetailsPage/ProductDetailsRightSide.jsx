@@ -1,3 +1,4 @@
+import React from "react";
 import { FaCartPlus, FaMinus, FaPlus } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
@@ -5,7 +6,7 @@ const ProductDetailsRightSide = () => {
 
 	const {singleProduct}=useSelector((state)=>state.product )
 	return (
-		<div className="md:w-[50%] w-full md:mt-0 mt-5">
+		<div className="w-1/2 md:mt-0 mt-5 p-5 space-y-5 overflow-y-auto">
 			{/* product general information */}
 			<h1 className="text-zinc-900 text-[25px] mb-[23px] font-semibold font-['Poppins'] leading-normal">
 				{singleProduct?.title}{" "}
@@ -55,11 +56,7 @@ const ProductDetailsRightSide = () => {
 			<h4 className="text-neutral-400 text-[15px] mb-[10px] font-medium font-['Poppins'] leading-normal tracking-tight">
 				Description
 			</h4>
-			<ul
-				style={{
-					listStyle: "circle",
-				}}
-			>
+			<ul className="ml-5 list-disc">
 				{singleProduct?.descriptions?.map((item) => {
 					return (
 						<li className="mt-2" key={item.id}>

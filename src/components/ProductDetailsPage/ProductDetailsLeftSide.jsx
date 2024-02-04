@@ -74,7 +74,7 @@ const ProductDetailsLeftSide = () => {
 		return (
 			<div className="flex items-center justify-end w-full gap-4 md:mb-4 carousel-button-group">
 				<button
-					className="absolute top-[50%] w-[50px] h-[50px] rounded-full md:left-[25px] -left-4 p-3"
+					className="absolute top-[50%] md:translate-y-[calc(-50%-90px)] w-[50px] h-[50px] rounded-full md:left-0 -left-4 p-3"
 					style={{
 						backgroundColor: currentSlide === 0 ? "#979898" : Colors.primary,
 					}}
@@ -87,7 +87,7 @@ const ProductDetailsLeftSide = () => {
 						backgroundColor:
 							currentSlide === singleProduct?.images?.length - 1 ? "#979898" : Colors.primary,
 					}}
-					className="absolute top-[50%] flex justify-center items-center md:right-[25px] -right-4  w-[50px] h-[50px] rounded-full z-50"
+					className="absolute top-[50%]  md:translate-y-[calc(-50%-90px)] flex justify-center items-center md:right-0 -right-4  w-[50px] h-[50px] rounded-full z-50"
 					onClick={() => next()}
 				>
 					<FaArrowRight className="w-5 h-5 text-white" />
@@ -125,7 +125,7 @@ const ProductDetailsLeftSide = () => {
 	};
 
 	return (
-		<div className="md:w-[50%] w-full border-2   md:p-10 p-2  shadow-md  mx-2 rounded-md relative">
+		<div className="md:w-1/2 p-5 rounded-md relative ">
 			<Carousel
 				swipeable={false}
 				draggable={false}
@@ -135,21 +135,21 @@ const ProductDetailsLeftSide = () => {
 				customButtonGroup={<ButtonGroup />}
 				renderButtonGroupOutside={true}
 				arrows={false}
-				containerClass="md:py-10 md:h-[750px] h-auto  md:mb-10"
+				containerClass="pt-0 h-auto h-[400px] md:h-[700px]"
 				customDot={<CustomDot />}
 			>
 				{singleProduct?.images?.map((item) => {
 					return (
 						<div
 							key={item.id}
-							className=" rounded-md md:w-[480px] w-full md:mb-[180px] mb-0 md:mt-[20px] md:h-[calc(650px)] h-auto bg-[#F6F6F6]  mx-auto"
+							className="w-full h-full mb-0  bg-[#F6F6F6]  mx-auto rounded-xl text-center"
 						>
-							<img src={item.image} alt="" className="w-full h-full" />
+							<img src={item.image} alt="" className="w-[100%] max-h-[100%] mx-auto" />
 						</div>
 					);
 				})}
 			</Carousel>
-			<button className="absolute flex items-center px-4 py-2 border-2 md:top-20 top-4 md:left-20 left-4 text-primaryColor border-primaryColor rounded-3xl">
+			<button className="absolute flex items-center px-4 py-2 border-2 md:top-10 top-10 md:left-10 left-10 text-primaryColor border-primaryColor rounded-3xl">
 				<FaArrowLeft />
 				<strong className="ml-1">Back</strong>
 			</button>
