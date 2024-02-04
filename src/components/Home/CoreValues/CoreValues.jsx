@@ -12,12 +12,12 @@ const CoreValues = () => {
 				<h3 className="title text-white font-semibold text-xl lg:text-[40px]">
 					Our Core Values
 				</h3>
-				<p className="desc text-white text-[12px] lg:text-xl font-normal leading-9 mt-7 text-center">
+				<p className="desc text-white text-[12px] lg:text-xl font-normal leading-9 mt-5 lg:mt-7 text-center">
 					Essence of Excellence: Nurturing Integrity, Driving Innovation,
 					Fostering Collaboration in Every Interaction.
 				</p>
-				<div className="h-[1px] w-full bg-white mt-11"></div>
-				<div className="three-cols-wrapper flex flex-col lg:flex-row items-center justify-center lg:mt-[60px]">
+				<div className="h-[1px] w-full bg-white my-7 lg:my-10"></div>
+				<div className="three-cols-wrapper flex flex-col lg:flex-row items-center justify-center lg:mt-[60px] space-x-5 space-y-10">
 					<div className="col-left flex flex-col items-center justify-center space-y-6">
 						<h3 className="text-white text-center text-lg lg:text-[22px] font-semibold">
 							Integrity

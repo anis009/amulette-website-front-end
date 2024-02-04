@@ -111,7 +111,7 @@ const OurProducts = ({ isOurProduct = true }) => {
 					</button>
 				</div>
 				<div className="mobile-product-wrapper block lg:hidden ">
-					<div className="mobile-product-grid lg:hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 ">
+					<div className="mobile-product-grid lg:hidden grid grid-cols-2 lg:grid-cols-4 gap-3 ">
 						{productsData &&
 							productsData.length > 0 &&
 							productsData.map((data, index) => (
