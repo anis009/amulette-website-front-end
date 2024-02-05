@@ -12,7 +12,7 @@ const StayWithUs = () => {
 				backgroundSize: "contain",
 				backgroundRepeat: "no-repeat",
 			}}
-			className="py-8 lg:pb-16 bg-none lg:bg-[url('Images/StayWithUs/Stay-With-Us.svg')]"
+			className="py-8 lg:pb-16 bg-none lg:bg-[url('/Images/StayWithUs/Stay-With-Us.svg')]"
 		>
 			<div className="container stay-with-us max-w-amulette lg:px-amulette mx-auto   ">
 				<div className="stay-with-us-inner flex flex-col lg:flex-row items-center justify-center lg:justify-between bg-[#FFEFE8] rounded-2xl py-8 lg:py-14 px-10 lg:px-16 ">
