@@ -35,7 +35,7 @@ const ContactUs = () => {
 								<div className="w-full mt-2.5 px-5 py-5 border border-[#E0E0E0] bg-white rounded-[10px] flex space-x-3">
 									<img src="Images/ContactUs/mail.svg" width={20} />
 									<input
-										className="w-full"
+										className="w-full focus:outline-none"
 										type="email"
 										name=""
 										placeholder="example@gmail.com"
@@ -62,7 +62,7 @@ const ContactUs = () => {
 									<img src="Images/ContactUs/chat.svg" className="mt-1" width={20} />
 									<textarea
 										rows={5}
-										className=""
+										className="w-full focus:outline-none"
 										placeholder="Type Here"
 									></textarea>
 								</div>

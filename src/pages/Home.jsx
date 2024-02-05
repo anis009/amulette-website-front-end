@@ -6,6 +6,7 @@ import CoreValues from "../components/Home/CoreValues/CoreValues";
 import DownloadApp from "../components/Home/DownloadApp/DownloadApp";
 import ContactUs from "../components/Home/ContactUs/ContactUs";
 import { useSelector } from "react-redux";
+import React from "react";
 
 const Home = () => {
 	const { value } = useSelector((state) => state.counter);

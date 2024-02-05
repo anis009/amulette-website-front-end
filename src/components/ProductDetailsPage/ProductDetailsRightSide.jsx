@@ -45,7 +45,7 @@ const ProductDetailsRightSide = () => {
 				Specifications
 			</h4>
 			<table className="mb-[40px]">
-				{singleProduct?.specifications?.map((item) => (
+				{singleProduct?.specification?.map((item) => (
 					<tr key={item.id}>
 						<td className="pr-4">{item.name}</td>
 						<td>{item.value}</td>

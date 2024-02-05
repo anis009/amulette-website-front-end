@@ -65,7 +65,7 @@ const OurProducts = ({ isOurProduct = true }) => {
 						//   showDots={true}
 						responsive={responsive}
 						//   ssr={true} // means to render carousel on server-side.
-						// infinite={true}
+						infinite={true}
 						//   centerMode={true}
 						autoPlay={true}
 						//   autoPlay={this.props.deviceType !== "mobile" ? true : false}
@@ -99,9 +99,9 @@ const OurProducts = ({ isOurProduct = true }) => {
 								ourCardHomeCarousel
 							/>
 						))}
-						{productsData && productsData.length > 0 && (
+						{/* {productsData && productsData.length > 0 && (
 							<div className="w-[300px]"></div>
-						)}
+						)} */}
 					</Carousel>
 					
 				</div>
@@ -123,7 +123,7 @@ const OurProducts = ({ isOurProduct = true }) => {
 								/>
 							))}
 					</div>
-					<div className="flex flex-row items-center justify-center m-10">
+					<div className="flex flex-row lg:hidden items-center justify-center m-10">
 						<button className="px-4 lg:px-8 py-2 lg:py-4 cursor-pointer hover:bg-primaryColor hover:text-white text-primaryColor border-2 border-primaryColor rounded-[10px]">
 							View ALL Products
 						</button>
