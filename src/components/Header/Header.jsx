@@ -58,8 +58,8 @@ const Header = () => {
 							<img
 								src={
 									lang === "english"
-										? "../../../public/Images/Header/us.png"
-										: "../../../public/Images/Header/bd.png"
+										? "/Images/Header/us.png"
+										: "/Images/Header/bd.png"
 								}
 								className="w-6 h-6 rounded-full"
 								alt=""
