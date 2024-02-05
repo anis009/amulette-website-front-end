@@ -63,17 +63,17 @@ const PhotosLibrary = () => {
 	return (
 		<div className="photos-library-wrapper ">
 			<div className="containerr max-w-amulette lg:px-amulette flex flex-col items-start justify-between mx-auto md:space-x-8 md:px-0 px-5 md:bg-white bg-[#fdfdfd] photos-library md:flex-row">
-				<div className="col-left lg:w-1/3 px-7 py-7 md:block hidden rounded-3xl border border-[#979898]">
+				<div className="col-left md:w-4/12 lg:w-3/12 px-7 py-7 md:block hidden rounded-3xl border border-[#979898]">
 					<License />
 					<Category photosLibrarySidebar={false} />
 				</div>
 
-				<div className="col-right w-full lg:w-2/3 md:rounded-3xl  md:border border-[#979898] px-7 py-7">
+				<div className="col-right w-full md:w-8/12  lg:w-9/12 md:rounded-3xl  md:border border-[#979898] px-0 sm:px-4 md:px-7 py-0 sm:py-4 md:py-7">
 					<h3 className="text-xl lg:text-[25px] font-bold">
 						<span className="text-[#25282B">Explore</span>
 						<span className="text-primaryColor"> Diverse Photos</span>
 					</h3>
-					<p className="text-xs lg:text-sm leading-[26px] lg:leading-7 font-normal text-[#25282B] mt-1">
+					<p className="text-sm lg:text-base leading-[26px] lg:leading-7 font-normal text-[#25282B] mt-1">
 						Dive into our extensive library of captivating photos. From stunning
 						landscapes to adorable pets, discover a world of creativity and
 						inspiration.
@@ -102,8 +102,8 @@ const PhotosLibrary = () => {
 							/>
 						</div>
 					</div>
-					{/* photos section */}
-					<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mt-6">
+					{/* photos section columns-3 lg:columns-4 */}
+					<div className=" grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4  gap-5 mt-6 overflow-hidden">
 						{filteredPhotos?.map((photo, index) => (
 							<PhotoCard key={index} photo={photo} />
 						))}
