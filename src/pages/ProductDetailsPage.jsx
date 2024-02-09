@@ -3,7 +3,7 @@ import ProductDetailsRightSide from "../components/ProductDetailsPage/ProductDet
 
 const ProductDetailsPage = () => {
 	return (
-		<div className="flex flex-col md:flex-row gap-3 px-3 p-5">
+		<div className="flex flex-col md:flex-row gap-5 px-3 p-5">
 			<ProductDetailsLeftSide />
 			<ProductDetailsRightSide />
 		</div>
