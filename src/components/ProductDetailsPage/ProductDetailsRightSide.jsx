@@ -16,14 +16,14 @@ const ProductDetailsRightSide = () => {
 			</p>
 
 			{/* button section */}
-			<div className="flex my-7 items-center flex-row">
+			<div className="flex my-4 md:my-7 items-center justify-between md:justify-start flex-row">
 				<h3 className="text-zinc-900 md:block hidden text-3xl font-bold font-['Poppins'] leading-[30.89px]">
 					$ {singleProduct?.price}
 				</h3>
 				<h3 className="text-zinc-900  md:hidden inline-block md:text-3xl font-bold text-xl font-['Poppins'] leading-[30.89px]">
 					$ {singleProduct?.price}
 				</h3>
-				<div className="ml-0 md:ml-5 lg:ml-10">
+				<div className="ml-5 lg:ml-10">
 					<button className="flex items-center justify-center px-10 lg:px-16 py-4 bg-orange-600 rounded-[65.36px]">
 						<FaCartPlus className="w-4 h-4 text-white" />
 						<strong className="ml-2 text-sm md:text-base text-white ">

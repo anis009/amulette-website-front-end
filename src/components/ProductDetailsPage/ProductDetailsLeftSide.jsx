@@ -74,7 +74,7 @@ const ProductDetailsLeftSide = () => {
 		return (
 			<div className="flex items-center justify-end w-full gap-4 md:mb-4 carousel-button-group">
 				<button
-					className="absolute top-[235px] w-[50px] h-[50px] rounded-full md:-left-[25px] -left-4 p-3"
+					className="absolute top-[185px] sm:top-[235px] w-[50px] h-[50px] rounded-full -left-6 md:-left-[25px] p-3"
 					style={{
 						backgroundColor: currentSlide === 0 ? "#979898" : Colors.primary,
 					}}
@@ -87,7 +87,7 @@ const ProductDetailsLeftSide = () => {
 						backgroundColor:
 							currentSlide === singleProduct?.images?.length - 1 ? "#979898" : Colors.primary,
 					}}
-					className="absolute top-[275px] flex justify-center items-center md:-right-[25px] -right-4  w-[50px] h-[50px] rounded-full z-50"
+					className="absolute top-[185px] sm:top-[235px] flex justify-center items-center -right-6 md:-right-[25px] w-[50px] h-[50px] rounded-full z-50"
 					onClick={() => next()}
 				>
 					<FaArrowRight className="w-5 h-5 text-white" />
@@ -126,7 +126,7 @@ const ProductDetailsLeftSide = () => {
 
 	return (
 		<div className="md:w-1/2 p-5 rounded-md relative ">
-			<div className="carousel-container relative h-[520px] ">
+			<div className="carousel-container relative h-[420px] sm:h-[520px] ">
 				<Carousel
 					swipeable={false}
 					draggable={false}
@@ -136,14 +136,14 @@ const ProductDetailsLeftSide = () => {
 					customButtonGroup={<ButtonGroup />}
 					renderButtonGroupOutside={true}
 					arrows={false}
-					containerClass="pt-0 h-auto h-[400px] pb-[150px]"// h-[400px] md:h-[700px]
+					containerClass="pt-0 h-auto h-[400px] sm:pb-[150px]"// h-[400px] md:h-[700px]
 					customDot={<CustomDot />}
 				>
 					{singleProduct?.images?.map((item) => {
 						return (
 							<div
 								key={item.id}
-								className="mb-0 h-[520px] bg-[#F6F6F6]  mx-auto flex rounded-xl text-center"
+								className="mb-0 h-[420px] sm:h-[520px] bg-[#F6F6F6]  mx-auto flex rounded-xl text-center"
 							>
 								<img src={item.image} alt="" className="mx-auto max-h-full w-[100%]" />
 							</div>
