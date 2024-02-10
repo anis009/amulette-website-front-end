@@ -23,7 +23,7 @@ const Header = () => {
 	return (
 		<div className="header-wrapper z-[150] sticky top-0 left-0 bg-white select-none">
 			<DesktopHeader />
-			<div className="mobile-header lg:hidden flex flex-row items-center justify-between px-5 py-4 shadow-md">
+			<div className="mobile-header lg:hidden flex flex-row items-center justify-between px-5 py-4">
 				<div
 					className="col-left"
 					onClick={(e) => {

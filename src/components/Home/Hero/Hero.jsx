@@ -28,7 +28,7 @@ const Hero = () => {
             Get The App
           </button>
         </div>
-        <div className="sm:hidden flex flex-row items-center justify-center">
+        <div className="sm:hidden flex flex-row items-center justify-center text-center mt-8 w-full">
           <img src="Images/Hero/Mobile-Hero-BG.svg"/>
         </div>
       </div>

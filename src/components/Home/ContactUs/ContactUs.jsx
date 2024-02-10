@@ -50,7 +50,7 @@ const ContactUs = () => {
 								</label>
 								<div className="w-full mt-2.5 px-5 py-5 border border-[#E0E0E0] bg-white rounded-[10px] flex space-x-3">
 									<img src="Images/ContactUs/bar_chart.svg" width={20} />
-									<select className="w-full">
+									<select className="w-full bg-white">
 										<option disabled>Select from here</option>
 										<option value={"purchases"}>Purchases</option>
 									</select>
