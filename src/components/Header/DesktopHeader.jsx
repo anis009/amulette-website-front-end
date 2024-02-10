@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { menuItems } from "../../constants/constant-data";
 import { useState } from "react";
+import { AiOutlineCaretDown } from "react-icons/ai"
+import React from "react";
 
 const DesktopHeader = () => {
 	const [lang, setLang] = useState("english");
@@ -37,7 +39,7 @@ const DesktopHeader = () => {
 						</span>
 						<img src="Images/Header/Cart.svg" /> */}
 				</div>
-				<div className="border flex items-center px-2 border-primaryColor py-2 rounded-3xl ">
+				<div className="border flex items-center px-2 border-primaryColor py-2 rounded-3xl relative ">
 					<img
 						src={
 							lang === "english"
@@ -50,13 +52,14 @@ const DesktopHeader = () => {
 					<select
 						value={lang}
 						onChange={(e) => setLang(e.target.value)}
-						className="lang outline-none px-2 rounded-3xl"
+						className="lang outline-none px-2 rounded-3xl bg-white appearance-none pr-5"
 					>
-						<option selected className="m-2" value="english">
+						<option selected className="m-2 px-2" value="english">
 							Eng
 						</option>
-						<option value="bangla">Bn</option>
+						<option className="px-2" value="bangla">Bn</option>
 					</select>
+					<AiOutlineCaretDown className="absolute right-2 top-[50%] translate-y-[-50%]"/>
 				</div>
 			</div>
 		</div>

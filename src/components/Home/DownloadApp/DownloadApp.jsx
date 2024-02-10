@@ -5,7 +5,7 @@ import { IoLogoGooglePlaystore } from "react-icons/io5";
 const DownloadApp = () => {
   return (
     <div className="download-app-wrapper">
-      <div className="download-app containerr max-w-amulette lg:px-amulette mx-auto flex flex-col lg:flex-row items-center justify-center mt-5 px-5 lg:px--0">
+      <div className="download-app containerr max-w-amulette lg:px-amulette mx-auto flex flex-col lg:flex-row items-center justify-center my-5 px-5 lg:px--0">
         <div className="col-left w-full lg:w-1/2">
           <div
             style={{ background: "rgba(246, 95, 25, 0.10)" }}
@@ -53,7 +53,7 @@ const DownloadApp = () => {
             </div>
           </div>
         </div>
-        <div className="col-right w-full lg:w-1/2">
+        <div className="col-right w-full lg:w-1/2 pb-2">
           <img src="Images/DownloadApp/Download-App-Right.svg" alt="" />
         </div>
       </div>

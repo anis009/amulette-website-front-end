@@ -2,6 +2,7 @@
 // import { menuItems } from "../../constants/constant-data";
 import { RiMenu5Fill } from "react-icons/ri";
 import { IoCloseSharp } from "react-icons/io5";
+import { AiOutlineCaretDown } from "react-icons/ai"
 
 import DesktopHeader from "./DesktopHeader";
 import { useEffect, useState } from "react";
@@ -18,9 +19,9 @@ const Header = () => {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, [pathname])
-
+	// shadow-md 
 	return (
-		<div className="header-wrapper z-[150] sticky top-0 left-0 bg-white shadow-md select-none">
+		<div className="header-wrapper z-[150] sticky top-0 left-0 bg-white select-none">
 			<DesktopHeader />
 			<div className="mobile-header lg:hidden flex flex-row items-center justify-between px-5 py-4 shadow-md">
 				<div
@@ -54,7 +55,7 @@ const Header = () => {
 						</span>
 						<img src="Images/Header/Cart.svg" /> */}
 						</div>
-						<div className="border flex items-center px-2 border-primaryColor py-2 rounded-3xl ">
+						<div className="border flex items-center px-2 border-primaryColor py-2 rounded-3xl relative ">
 							<img
 								src={
 									lang === "english"
@@ -67,13 +68,14 @@ const Header = () => {
 							<select
 								value={lang}
 								onChange={(e) => setLang(e.target.value)}
-								className="lang outline-none px-2 rounded-3xl"
+								className="lang outline-none px-2 rounded-3xl bg-white appearance-none pr-5"
 							>
 								<option selected className="m-2" value="english">
 									Eng
 								</option>
 								<option value="bangla">Bn</option>
 							</select>
+							<AiOutlineCaretDown className="absolute right-2 top-[50%] translate-y-[-50%]"/>
 						</div>
 					</div>
 				</div>

@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 const ProductDetailsRightSide = () => {
 
-	const {singleProduct}=useSelector((state)=>state.product )
+	const { singleProduct } = useSelector((state) => state.product)
 	return (
 		<div className="md:w-1/2 md:mt-0 mt-5 p-5 space-y-5 overflow-y-auto">
 			{/* product general information */}
@@ -12,27 +12,19 @@ const ProductDetailsRightSide = () => {
 				{singleProduct?.title}{" "}
 			</h1>
 			<p className=" text-zinc-800 mb-[34px] text-[15px] font-normal font-['Poppins'] leading-7 tracking-tight">
-			{singleProduct?.shortDescription}
+				{singleProduct?.shortDescription}
 			</p>
-			<h3 className="text-zinc-900 mb-[44px] md:block hidden text-3xl font-bold font-['Poppins'] leading-[30.89px]">
-				$ {singleProduct?.price}
-			</h3>
+
 			{/* button section */}
-			<div className="flex items-center mb-[40px] md:justify-start justify-between flex-row">
-				<div className="w-[210.10px] h-[61px] md:flex hidden items-center justify-between px-5  bg-neutral-50 rounded-[500px] shadow-inner">
-					<button>
-						<FaMinus className="w-4 h-4" />
-					</button>
-					<p>0</p>
-					<button>
-						<FaPlus className="w-4 h-4" />
-					</button>
-				</div>
+			<div className="flex mb-[40px] md:justify-between items-center justify-between flex-row">
+				<h3 className="text-zinc-900 md:block hidden text-3xl font-bold font-['Poppins'] leading-[30.89px]">
+					$ {singleProduct?.price}
+				</h3>
 				<h3 className="text-zinc-900  md:hidden inline-block md:text-3xl font-bold text-xl font-['Poppins'] leading-[30.89px]">
 					$ {singleProduct?.price}
 				</h3>
-				<div className="ml-0 md:ml-10">
-					<button className="md:w-[237.90px] w-[200px] flex items-center justify-center px-5 md:h-[61px] h-[50px] bg-orange-600 rounded-[65.36px]">
+				<div className="ml-0 md:ml-5 lg:ml-10">
+					<button className="flex items-center justify-center px-8 lg:px-16 md:h-[61px] h-[50px] bg-orange-600 rounded-[65.36px]">
 						<FaCartPlus className="w-4 h-4 text-white" />
 						<strong className="ml-2 text-base text-white md:text-lg">
 							Buy Now

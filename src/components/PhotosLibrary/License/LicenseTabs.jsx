@@ -11,7 +11,7 @@ const LicenseTabs = () => {
 				onClick={() => dispatch(setLicense("all"))}
 				className={`tab-item all w-full ${
 					license === "all" ? "bg-primaryColor text-white" : ""
-				} text-sm text-center py-2 rounded-full cursor-pointer font-semibold`}
+				} text-xs text-center p-2 rounded-full cursor-pointer font-semibold`}
 			>
 				All
 			</div>
@@ -19,7 +19,7 @@ const LicenseTabs = () => {
 				onClick={() => dispatch(setLicense("free"))}
 				className={`tab-item free w-full ${
 					license === "free" ? "bg-primaryColor text-white" : ""
-				} text-sm text-center py-2 rounded-full cursor-pointer font-semibold`}
+				} text-xs text-center p-2 rounded-full cursor-pointer font-semibold`}
 			>
 				Free
 			</div>
@@ -27,7 +27,7 @@ const LicenseTabs = () => {
 				onClick={() => dispatch(setLicense("premium"))}
 				className={`tab-item premium w-full ${
 					license === "premium" ? "bg-primaryColor text-white" : ""
-				} text-sm text-center py-2 rounded-full cursor-pointer font-semibold`}
+				} text-xs text-center p-2 rounded-full cursor-pointer font-semibold`}
 			>
 				Premium
 			</div>

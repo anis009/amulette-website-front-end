@@ -6,6 +6,7 @@ import ProductNotFound from "../components/ProductNotFound";
 import { BsXCircle } from "react-icons/bs";
 import ProductDetailsPage from "./ProductDetailsPage";
 import React from "react";
+import { PiCaretDownBold  } from "react-icons/pi";
 const ProductsPage = () => {
 	const [productSearchTitle, setProductSearchTitle] = useState("");
 	const [sortOption, setSortOption] = useState("");
@@ -35,8 +36,8 @@ const ProductsPage = () => {
 					<p className="text-[#25282B] text-[12px] lg:text-sm font-normal text-left mt-4">
 						Elevate Your Experience with Our Range of Stylish Accessories
 					</p>
-					<div className="flex flex-row items-center justify-between search-sort-wrapper space-x-7 mt-7">
-						<div className="search-wrapper w-3/4 lg:w-full flex flex-row items-center justify-center space-x-2.5 border border-[#DADADA] rounded-full px-2 lg:px-4 py-2 lg:py-3.5">
+					<div className="flex flex-row w-full search-sort-wrapper space-x-2 sm:space-x-5 lg:space-x-10 mt-7">
+						<div className="search-wrapper w-2/3 flex flex-row items-center justify-center space-x-2.5 border border-[#DADADA] rounded-full px-2 lg:px-4 py-2 lg:py-3.5">
 							<IoSearchSharp className="text-primaryColor" />
 							<input
 								onChange={(e) => setProductSearchTitle(e.target.value)}
@@ -46,17 +47,20 @@ const ProductsPage = () => {
 								placeholder="Search for product..."
 							/>
 						</div>
-						<select
-							value={sortOption}
-							onChange={(e) => setSortOption(e.target.value)}
-							className="w-1/4 lg:w-auto border border-primaryColor px-2 lg:px-4 py-2 lg:py-3.5  rounded-full"
-						>
-							<option disabled value="Sort by">
-								Sort By: Price low to high
-							</option>
-							<option value="low-to-high">Price: Low to High</option>
-							<option value="high-to-low">Price: High to Low</option>
-						</select>
+						<div className="filter-wrapper w-1/3 relative">
+							<select
+								value={sortOption}
+								onChange={(e) => setSortOption(e.target.value)}
+								className="border border-primaryColor px-5 pr-8 py-2 lg:py-3.5 w-full rounded-full appearance-none"
+							>
+								<option disabled value="Sort by">
+									Sort By: Price low to high
+								</option>
+								<option value="low-to-high">Price: Low to High</option>
+								<option value="high-to-low">Price: High to Low</option>
+							</select>
+							<PiCaretDownBold className="absolute right-2 sm:right-4 top-[50%] translate-y-[-50%]"/>
+						</div>
 					</div>
 					<div className="grid grid-cols-2 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-9">
 						{filteredProducts.length > 0 &&

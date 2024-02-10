@@ -25,7 +25,7 @@ const StayWithUs = () => {
 						</p>
 					</div>
 					<div className="lg:w-1/2 flex lg:content-end lg:self-end lg:justify-end mt-5 lg:mt-0">
-						<div className="email-subscribe w-full max-w-full rounded-lg flex flex-col sm:flex-row sm:items-baseline sm:justify-end sm:content-end space-x-3 p-1.5 space-y-3 bg-white ">
+						<div className="email-subscribe w-full max-w-full rounded-lg flex flex-col sm:flex-row sm:items-baseline sm:justify-end sm:content-end space-x-3 p-1.5 space-y-3 sm:space-y-0 bg-white ">
 							<input
 								className="border-collapse focus:outline-none focus:border-collapse px-4 py-3 rounded-md"
 								type="email"
