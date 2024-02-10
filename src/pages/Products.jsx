@@ -63,7 +63,7 @@ const ProductsPage = () => {
 							<PiCaretDownBold className="absolute right-2 sm:right-4 top-[50%] translate-y-[-50%]"/>
 						</div>
 					</div>
-					<div className="grid grid-cols-2 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-9">
+					<div className="grid grid-cols-2 gap-y-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-9">
 						{filteredProducts.length > 0 &&
 							filteredProducts?.map((data, index) => (
 								<ProductCard 

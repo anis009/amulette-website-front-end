@@ -74,7 +74,7 @@ const ProductDetailsLeftSide = () => {
 		return (
 			<div className="flex items-center justify-end w-full gap-4 md:mb-4 carousel-button-group">
 				<button
-					className="absolute top-[275px] w-[50px] h-[50px] rounded-full md:-left-[25px] -left-4 p-3"
+					className="absolute top-[235px] w-[50px] h-[50px] rounded-full md:-left-[25px] -left-4 p-3"
 					style={{
 						backgroundColor: currentSlide === 0 ? "#979898" : Colors.primary,
 					}}
@@ -126,7 +126,7 @@ const ProductDetailsLeftSide = () => {
 
 	return (
 		<div className="md:w-1/2 p-5 rounded-md relative ">
-			<div className="carousel-container relative h-[600px] ">
+			<div className="carousel-container relative h-[520px] ">
 				<Carousel
 					swipeable={false}
 					draggable={false}
@@ -143,7 +143,7 @@ const ProductDetailsLeftSide = () => {
 						return (
 							<div
 								key={item.id}
-								className="mb-0 h-[600px] bg-[#F6F6F6]  mx-auto flex rounded-xl text-center"
+								className="mb-0 h-[520px] bg-[#F6F6F6]  mx-auto flex rounded-xl text-center"
 							>
 								<img src={item.image} alt="" className="mx-auto max-h-full w-[100%]" />
 							</div>
@@ -151,7 +151,7 @@ const ProductDetailsLeftSide = () => {
 					})}
 				</Carousel>
 			</div>
-			<button className="absolute flex items-center px-4 py-2 border-2 md:top-10 top-10 md:left-10 left-10 text-primaryColor border-primaryColor rounded-3xl">
+			<button className="absolute flex items-center px-4 py-2 border bg-white md:top-10 top-10 md:left-10 left-10 text-primaryColor border-primaryColor rounded-3xl">
 				<FaArrowLeft />
 				<strong className="ml-1">Back</strong>
 			</button>

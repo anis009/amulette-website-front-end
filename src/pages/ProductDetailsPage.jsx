@@ -1,11 +1,14 @@
 import ProductDetailsLeftSide from "../components/ProductDetailsPage/ProductDetailsLeftSide";
 import ProductDetailsRightSide from "../components/ProductDetailsPage/ProductDetailsRightSide";
-
+// max-w-amulette flex flex-col md:flex-row gap-5 p-5 h-auto md:h-[100%]
 const ProductDetailsPage = () => {
 	return (
-		<div className="flex flex-col md:flex-row gap-5 px-3 p-5 h-[100%]">
-			<ProductDetailsLeftSide />
-			<ProductDetailsRightSide />
+		<div className=" max-w-amulette flex flex-col md:flex-row gap-5 p-5 h-auto md:h-[100%]">
+			{/* <div className="y-scroll flex flex-col md:flex-row gap-5 p-5 "> */}
+				<ProductDetailsLeftSide />
+				<ProductDetailsRightSide />
+			{/* </div> */}
+			
 		</div>
 	);
 };

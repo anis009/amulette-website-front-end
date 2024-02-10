@@ -14,7 +14,7 @@ const ProductCard = ({ product, setShowModal, ourCardHomeCarousel, index }) => {
 	return (
 		<div
 			className={classNames(
-				"flex flex-col py-2 sm:py-5 border border-black product-card border-opacity-20 rounded-3xl text-center h-full justify-between",
+				"flex flex-col py-2 sm:py-5 mx-2.5 border border-black product-card border-opacity-20 rounded-3xl text-center h-full justify-between",
 				{//
 					// "w-[200px]": ourCardHomeCarousel === true,
 				}
