@@ -6,12 +6,12 @@ const DownloadApp = () => {
   return (
     <div className="download-app-wrapper">
       <div className="download-app containerr max-w-amulette lg:px-amulette mx-auto flex flex-col lg:flex-row items-center justify-center my-5 px-5 lg:px--0">
-        <div className="col-left w-full lg:w-1/2">
+        <div className="col-left w-full lg:w-7/12 xl:w-1/2">
           <div
             style={{ background: "rgba(246, 95, 25, 0.10)" }}
-            className="amulette-available w-full lg:w--[70%] flex flex-row items-center justify-start text-[11px] lg:text-sm border-[1px] border-primaryColor space-x-3 rounded-full px-2 lg:px-2.5 py-2 lg:py-2.5"
+            className="amulette-available w-auto md:w-[450px] lg:w-[500px] xl:w-[550px] flex flex-row items-center justify-start text-[11px] lg:text-sm border-[1px] border-primaryColor space-x-3 rounded-full px-2 lg:px-2.5 py-2 lg:py-2.5"
           >
-            <span className="bg-primaryColor text-sm sm:text-base xl:text-lg text-white font-semibold text-center px-4 lg:px-10 py-1 lg:py-1.5 rounded-full">
+            <span className="bg-primaryColor text-sm sm:text-base xl:text-lg text-white font-semibold text-center px-4 lg:px-10 py-2.5 sm:py-1 lg:py-1.5 rounded-full">
               Amulette
             </span>{" "}
             <span className=" text-sm sm:text-base xl:text-lg"> Is available Now on android and ios</span>
@@ -53,7 +53,7 @@ const DownloadApp = () => {
             </div>
           </div>
         </div>
-        <div className="col-right w-full lg:w-1/2 pb-2">
+        <div className="col-right w-full lg:w-5/12 xl:w-1/2 pb-2">
           <img src="Images/DownloadApp/Download-App-Right.svg" alt="" />
         </div>
       </div>

@@ -11,6 +11,7 @@ import { productsData } from "./ProductData";
 import ProductDetailsPage from "../../../pages/ProductDetailsPage";
 import { BsXCircle } from "react-icons/bs";
 import React from "react";
+import ProductDetailsModal from "../../../pages/ProductDetailsModal";
 const OurProducts = ({ isOurProduct = true }) => {
 	const [isPrevDisabled, setIsPrevDisabled] = useState(true);
 	const [isNextDisabled, setIsNextDisabled] = useState(false);
@@ -129,19 +130,7 @@ const OurProducts = ({ isOurProduct = true }) => {
 						</button>
 					</div>
 					{showModal && (
-						<div className="fixed inset-0 bg-[rgba(0,0,0,0.3)] z-[99999] flex items-center justify-center  overflow-y-auto outline-none focus:outline-none">
-							<div className="relative w-[90%] max-h-[90%]  overflow-y-auto  bg-white z-[9999] my-6 rounded-md mx-auto">
-								<div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
-									<div className="absolute top-5 right-5 ">
-										<BsXCircle
-											onClick={() => setShowModal(false)}
-											className="w-6 h-6 text-red-600 cursor-pointer"
-										/>
-									</div>
-								</div>
-								<ProductDetailsPage />
-							</div>
-						</div>
+						<ProductDetailsModal setShowModal={setShowModal} />
 					)}
 				</div>
 			</div>
