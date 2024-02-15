@@ -7,7 +7,7 @@ import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import React from "react";
-const ProductDetailsLeftSide = () => {
+const ProductDetailsLeftSide = ({ setShowModal }) => {
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
 	const handleResize = () => {
@@ -74,7 +74,7 @@ const ProductDetailsLeftSide = () => {
 		return (
 			<div className="flex items-center justify-end w-full gap-4 md:mb-4 carousel-button-group">
 				<button
-					className="absolute top-[185px] sm:top-[235px] w-[50px] h-[50px] rounded-full -left-6 md:-left-[25px] p-3"
+					className="absolute top-[150px] sm:top-[235px] w-[50px] h-[50px] rounded-full -left-6 md:-left-[25px] p-3"
 					style={{
 						backgroundColor: currentSlide === 0 ? "#979898" : Colors.primary,
 					}}
@@ -87,7 +87,7 @@ const ProductDetailsLeftSide = () => {
 						backgroundColor:
 							currentSlide === singleProduct?.images?.length - 1 ? "#979898" : Colors.primary,
 					}}
-					className="absolute top-[185px] sm:top-[235px] flex justify-center items-center -right-6 md:-right-[25px] w-[50px] h-[50px] rounded-full z-50"
+					className="absolute top-[150px] sm:top-[235px] flex justify-center items-center -right-6 md:-right-[25px] w-[50px] h-[50px] rounded-full z-50"
 					onClick={() => next()}
 				>
 					<FaArrowRight className="w-5 h-5 text-white" />
@@ -126,7 +126,7 @@ const ProductDetailsLeftSide = () => {
 
 	return (
 		<div className="md:w-1/2 p-5 rounded-md relative ">
-			<div className="carousel-container relative h-[420px] sm:h-[520px] ">
+			<div className="carousel-container relative h-[350px] sm:h-[520px] ">
 				<Carousel
 					swipeable={false}
 					draggable={false}
@@ -143,7 +143,7 @@ const ProductDetailsLeftSide = () => {
 						return (
 							<div
 								key={item.id}
-								className="mb-0 h-[420px] sm:h-[520px] bg-[#F6F6F6]  mx-auto flex rounded-xl text-center"
+								className="mb-0 h-[350px] sm:h-[520px] bg-[#F6F6F6]  mx-auto flex rounded-xl text-center"
 							>
 								<img src={item.image} alt="" className="mx-auto max-h-full w-[100%]" />
 							</div>
@@ -151,7 +151,10 @@ const ProductDetailsLeftSide = () => {
 					})}
 				</Carousel>
 			</div>
-			<button className="absolute flex items-center px-4 py-2 border bg-white md:top-10 top-10 md:left-10 left-10 text-primaryColor border-primaryColor rounded-3xl">
+			<button
+				onClick={() => setShowModal(false)}
+				className="absolute flex items-center px-3 md:px-4 py-1.5 md:py-2 border bg-white md:top-10 top-10 md:left-10 left-10 text-primaryColor border-primaryColor rounded-3xl text-sm sm:text-base"
+			>
 				<FaArrowLeft />
 				<strong className="ml-1">Back</strong>
 			</button>

@@ -16,42 +16,85 @@ body {
 .inactive-header > span {
 	display: none;
 }
-/* for animation of sidebar  */
-
-.active-sidebar-open {
-	animation: sideBarOpenAnimation 500ms ease-in-out;
-}
-
 /* ----------- Product Details Scrollbar ------  */
-
-.prodcut-details-right::-webkit-scrollbar {
+/* product-details */
+.product-details::-webkit-scrollbar,
+.product-details-right::-webkit-scrollbar {
   width: 5px;
 	border-radius: 40px;
 }
 
-/* Track */
-.prodcut-details-right::-webkit-scrollbar-track {
+.product-details::-webkit-scrollbar-track,
+.product-details-right::-webkit-scrollbar-track {
   background: #f3f3f3;
 	border-radius: 40px;
 }
 
-/* Handle */
-.prodcut-details-right::-webkit-scrollbar-thumb {
+.product-details::-webkit-scrollbar-thumb,
+.product-details-right::-webkit-scrollbar-thumb {
   background: #ea5a0cc5;
 	border-radius: 40px;
 }
 
-/* Handle on hover */
-.prodcut-details-right::-webkit-scrollbar-thumb:hover {
+.product-details::-webkit-scrollbar-thumb:hover,
+.product-details-right::-webkit-scrollbar-thumb:hover {
   background: #ea580c;
+}
+
+/* --------------------------------------- */
+/* for animation of mobile navigation start */
+.mobile-nav-open {
+	animation: mobileNavOpenAnm 500ms ease-in-out;
+}
+
+@keyframes mobileNavOpenAnm {
+	0% {
+		opacity: 0;
+		height: 0;
+	}
+	1% {
+		opacity: 0;
+		height: 100vh;
+	}
+	100% {
+		opacity: 1;
+		height: 100vh;
+	}
+}
+.mobile-nav-close {
+	display: none;
+	animation: mobileNavCloseAnm 1s ease-in-out;
+}
+@keyframes mobileNavCloseAnm {
+	0% {
+		display: block;
+		opacity: 1;
+		height: 100vh;
+	}
+	99% {
+		display: block;
+		opacity: 0;
+		height: 100vh;
+	}
+	100% {
+		display: block;
+		opacity: 0;
+		height: 0;
+	}
+}
+/* for animation of mobile navigation end */
+
+/* for animation of sidebar start */
+.active-sidebar-open {
+	animation: sideBarOpenAnimation 500ms ease-in-out;
 }
 
 @keyframes sideBarOpenAnimation {
 	0% {
-		left: -1000px;
+		opacity: 0;
 	}
 	100% {
-		left: 0px;
+		opacity: 1;
 	}
 }
 .inactive-sidebar-open {
@@ -60,14 +103,17 @@ body {
 }
 @keyframes sidebarCloseAnimation {
 	0% {
-		transform: translateX(0);
+		opacity: 1;
 		display: block;
 	}
 	100% {
-		transform: translateX(-100%);
+		opacity: 0;
 		display: block;
 	}
 }
+/* for animation of sidebar end */
+/* --------------------------------------- */
+
 
 @media screen and (max-width: 370px) {
 	.email-subscribe {

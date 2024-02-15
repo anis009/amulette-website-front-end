@@ -48,7 +48,7 @@ const OurProducts = ({ isOurProduct = true }) => {
 		<div className="our-products-wrapper mt-[52px]">
 			<div className="our-products  max-w-amulette lg:px-amulette mx-auto px-5 ">
 				{isOurProduct && (
-					<h1 className="text-xl lg:text-[40px] font-semibold font-Poppins text-center mb-5">
+					<h1 className="text-xl lg:text-[40px] font-semibold font-Poppins text-center mb-2">
 						<span className="text-primaryColor">Our </span>
 						<span className="">Products</span>
 					</h1>
@@ -59,7 +59,7 @@ const OurProducts = ({ isOurProduct = true }) => {
 					<NextButtonCustomEB nextRef={nextRef} disabled={isNextDisabled} />
 
 					<Carousel
-						className="mx-auto mt-6 md:mt-16  relative z--0"
+						className="mx-auto md:mt-10  relative z--0"
 						partialVisible={true}
 						swipeable={true}
 						draggable={true}
@@ -111,7 +111,7 @@ const OurProducts = ({ isOurProduct = true }) => {
 						View ALL Products
 					</button>
 				</div>
-				<div className="mobile-product-wrapper ">
+				<div className="mobile-product-wrapper mt-6">
 					<div className="mobile-product-grid lg:hidden grid grid-cols-2 lg:grid-cols-4 gap-3 ">
 						{productsData &&
 							productsData.length > 0 &&

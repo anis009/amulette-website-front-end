@@ -7,7 +7,7 @@ const Copyright = () => {
 				<div className="copyright-text capitalize font-Montserrat text-xs lg:text-lg text-white text-center lg:text-left">
 					© 2023 Amulette Limited. All rights reserved.
 				</div>
-				<div className="copyright-logo my-3 lg:mt-0">
+				<div className="copyright-logo my-3 mt-5 lg:mt-0">
 					<img
 						src={"Images/Footer/Copyright-Logo.svg"}
 						width={117}

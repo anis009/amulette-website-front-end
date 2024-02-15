@@ -6,17 +6,17 @@ const ProductDetailsRightSide = () => {
 
 	const { singleProduct } = useSelector((state) => state.product)
 	return (
-		<div className="prodcut-details-right md:w-1/2 my-5 mt-5 p-5 pt-0 h-auto overflow-y-auto">
+		<div className="product-details-right md:w-1/2 my-5 mt-0 md:mt-5 p-5 pt-0 h-auto overflow-y-auto">
 			{/* product general information */}
-			<h1 className="text-zinc-900 text-[25px] mb-2 font-semibold font-['Poppins'] leading-normal">
+			<h1 className="text-zinc-900 text-lg sm:text-[25px] mb-2 font-semibold font-['Poppins'] leading-normal">
 				{singleProduct?.title}{" "}
 			</h1>
-			<p className=" text-zinc-800 text-[15px] font-normal font-['Poppins'] leading-7 tracking-tight">
+			<p className=" text-zinc-800 text-sm sm:text-[15px] font-normal font-['Poppins'] leading-7 tracking-tight">
 				{singleProduct?.shortDescription}
 			</p>
 
 			{/* button section */}
-			<div className="flex my-4 md:my-7 items-center justify-between md:justify-start flex-row">
+			<div className="flex my-3 sm:my-4 md:my-7 items-center justify-between md:justify-start flex-row">
 				<h3 className="text-zinc-900 md:block hidden text-3xl font-bold font-['Poppins'] leading-[30.89px]">
 					$ {singleProduct?.price}
 				</h3>
@@ -33,25 +33,25 @@ const ProductDetailsRightSide = () => {
 				</div>
 			</div>
 			{/* product specification */}
-			<h4 className="text-neutral-400 text-[15px] mb-[10px] font-medium font-['Poppins'] leading-normal tracking-tight">
+			<h4 className="text-neutral-400 text-sm sm:text-[15px] mb-[10px] font-medium font-['Poppins'] leading-normal tracking-tight">
 				Specifications
 			</h4>
-			<table className="mb-[40px]">
+			<table className="mb-5 sm:mb-[40px]">
 				{singleProduct?.specification?.map((item) => (
 					<tr key={item.id} className="py-1">
-						<td className="pr-4 leading-6">{item.name}</td>
+						<td className="pr-4 leading-6 text-sm">{item.name}</td>
 						<td className="text-sm text-[#666666] leading-6">{item.value}</td>
 					</tr>
 				))}
 			</table>
 			{/* product description */}
-			<h4 className="text-neutral-400 text-[15px] mb-[10px] font-medium font-['Poppins'] leading-normal tracking-tight">
+			<h4 className="text-neutral-400 text-sm sm:text-[15px] mb-[10px] font-medium font-['Poppins'] leading-normal tracking-tight">
 				Description
 			</h4>
 			<ul className="ml-5 list-disc">
 				{singleProduct?.descriptions?.map((item) => {
 					return (
-						<li className="mt-2" key={item.id}>
+						<li className="mt-2 text-sm sm:text-base" key={item.id}>
 							{item.description}
 						</li>
 					);

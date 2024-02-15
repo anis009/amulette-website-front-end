@@ -4,33 +4,36 @@ const Hero = () => {
   return (
     <div
       // style={{ backgroundImage: `url('Images/Hero/Hero-BG.svg')` }}
-      className="hero-wrapper bg-[url('/Images/Hero/hero-bg-mobile.svg')] sm:bg-heroDesktop bg-contain sm:bg-cover bg-right-top bg-no-repeat sm:bg-center pt-[50px] lg:pt-[160px] pb-[70px] lg:pb-[180px] "
+      className="hero-wrapper bg-[url('/Images/Hero/hero-bg-mobile.svg')] sm:bg-heroDesktop bg-contain sm:bg-cover bg-right-top bg-no-repeat sm:bg-center pt-5 sm:pt-10 lg:pt-[160px]  pb-5 sm:pb-10  lg:pb-[160px] "
     >
       <div className="hero containerr max-w-amulette lg:px-amulette mx-auto  flex flex-col items-start justify-center lg:justify-start px-5 ">
         <h3 className="text-left uppercase text-primaryColor font-Poppins font-bold text-sm lg:text-xl">
           Express Yourself with Amulette
         </h3>
-        <div className="heading-section flex flex-col items-start justify-start text-left font-Poppins text-[30px] font-bold lg:text-[66px] text-headingColor mt-8">
+        <div className="heading-section flex flex-col items-start justify-start text-left font-Poppins text-[26px] md:text-[30px]  lg:text-[66px] font-bold text-headingColor mt-5 md:mt-8">
           <span className="blockk">Your Personal</span>
           <span className="">Badge of Creativity!</span>
         </div>
-        <div className="paragram-section w-full sm:w-[70%] lg:w-full flex flex-col items-start justify-start font-Poppins text-xl text-headingColor font-normal mt-8">
-          <span className="block">
+        <div className="paragram-section w-full sm:w-[70%] lg:w-full flex flex-col items-start justify-start font-Poppins md:text-xl text-headingColor font-normal mt-5 md:mt-8">
+          <span className="hidden md:block">
             A compact, stylish, and customizable badge that
           </span>
-          <span className="block mt-2">showcases your unique personality.</span>
+          <span className="hidden md:block mt-2">showcases your unique personality.</span>
+          <span className="block md:hidden">
+            A compact, stylish, and customizable badge that showcases your unique personality.
+          </span>
         </div>
-        <div className="buttons flex flex-row items-center justify-center space-x-7 mt-12">
-          <button className="text-sm lg:text-xl font-Poppins font-medium bg-primaryColor text-white px-8 md:px-12 lg:px-[76px] py-2 md:py-3 lg:py-4 rounded-lg border-[2px] border-primaryColor shadow-[4px_13px_30px_0px_#F65F191A]">
+        <div className="buttons flex flex-row items-center justify-center space-x-7 mt-5 md:mt-12">
+          <button className="text-sm lg:text-xl font-Poppins font-medium bg-primaryColor text-white px-6 sm:px-8 md:px-12 lg:px-[76px] py-2 md:py-3 lg:py-4 rounded-lg border-[2px] border-primaryColor shadow-[4px_13px_30px_0px_#F65F191A]">
             Shop Now
           </button>
-          <button className="text-sm lg:text-xl font-Poppins font-medium text-primaryColor hover:bg-primaryColor hover:text-white border-[2px] border-primaryColor px-8 md:px-12 lg:px-[76px] py-2 md:py-3 lg:py-4 rounded-lg shadow-[4px_13px_30px_0px_#F65F191A]">
+          <button className="text-sm lg:text-xl font-Poppins font-medium text-primaryColor hover:bg-primaryColor hover:text-white border-[2px] border-primaryColor px-6 sm:px-8 md:px-12 lg:px-[76px] py-2 md:py-3 lg:py-4 rounded-lg shadow-[4px_13px_30px_0px_#F65F191A]">
             Get The App
           </button>
         </div>
-        <div className="sm:hidden flex flex-row items-center justify-center text-center mt-8 w-full">
-          <img src="Images/Hero/Mobile-Hero-BG.svg"/>
-        </div>
+      </div>
+      <div className="sm:hidden flex flex-row items-center justify-center text-center mt-4 md:mt-8 w-full">
+        <img className="w-full" src="Images/Hero/Mobile-Hero-BG.svg"/>
       </div>
     </div>
   );

@@ -5,45 +5,81 @@ import { IoCloseSharp } from "react-icons/io5";
 import { AiOutlineCaretDown } from "react-icons/ai"
 
 import DesktopHeader from "./DesktopHeader";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import MobileMenu from "./MobileMenu";
 import React from "react";
 import { useLocation } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ librayFilterOpen, setLibrayFilterOpen }) => {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const [lang, setLang] = useState("english");
+
+	const [windowWidth, setWindowWidth] = useState(0);
 
 	// scroll to the top at every path changes
 	const { pathname } = useLocation();
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, [pathname])
+
+	useEffect(() => {
+		if (isMobileMenuOpen) {
+			document.body.style.overflow = 'hidden'
+		} else {
+			document.body.style.overflow = ''
+		}
+	}, [isMobileMenuOpen])
+
+	useLayoutEffect(() => {
+		const updateSize = () => {
+			setWindowWidth(window.innerWidth);
+		}
+		window.addEventListener('resize', updateSize);
+		updateSize();
+		return () => window.removeEventListener('resize', updateSize);
+	}, [])
+
+	useEffect(() => {
+		// console.log('windowWidth: ', windowWidth)767
+	}, [windowWidth])
+
 	// shadow-md 
 	return (
-		<div className="header-wrapper z-[150] sticky top-0 left-0 bg-white select-none">
+		<div className={`header-wrapper z-[150] sticky top-0 left-0 bg-white select-none  ${isMobileMenuOpen ? ' h-svh' : ''}`}>
 			<DesktopHeader />
-			<div className="mobile-header lg:hidden flex flex-row items-center justify-between px-5 py-4">
-				<div
-					className="col-left"
-					onClick={(e) => {
-						console.log('header-icon: ', e.target)
-						setIsMobileMenuOpen(!isMobileMenuOpen)
-					}}
-				>
-					{isMobileMenuOpen && (
-						<IoCloseSharp
-							onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-							size={26}
-						/>
-					)}
-					{!isMobileMenuOpen && (
-						<RiMenu5Fill
-							
-							size={26}
-						/>
-					)}
-				</div>
+			<div className="mobile-header shadow-[0px_3px_10px_2px_#0000000A] lg:hidden flex flex-row items-center justify-between px-5 py-4">
+				{windowWidth < 768 && librayFilterOpen ? (
+					<div
+						className="col-left"
+						onClick={(e) => {
+							setLibrayFilterOpen(false)
+						}}
+					>
+						<img src="Images/Header/sidebar-back-icon.svg" alt="" />
+					</div>
+				) : (
+					<div
+						className="col-left"
+						onClick={(e) => {
+							console.log('header-icon: ', e.target)
+							setIsMobileMenuOpen(!isMobileMenuOpen)
+						}}
+					>
+						{isMobileMenuOpen && (
+							<IoCloseSharp
+								onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+								size={26}
+							/>
+						)}
+						{!isMobileMenuOpen && (
+							<RiMenu5Fill
+
+								size={26}
+							/>
+						)}
+					</div>
+				)}
+
 				<div className="col-middle menu-items">
 					<img src="Images/Header/Logo.svg" />
 				</div>
@@ -75,16 +111,16 @@ const Header = () => {
 								</option>
 								<option value="bangla">Bn</option>
 							</select>
-							<AiOutlineCaretDown className="absolute right-2 top-[50%] translate-y-[-50%]"/>
+							<AiOutlineCaretDown className="absolute right-2 top-[50%] translate-y-[-50%]" />
 						</div>
 					</div>
 				</div>
 			</div>
 			{/* {isMobileMenuOpen && ( */}
-				<MobileMenu
-					isMobileMenuOpen={isMobileMenuOpen}
-					setIsMobileMenuOpen={setIsMobileMenuOpen}
-				/>
+			<MobileMenu
+				isMobileMenuOpen={isMobileMenuOpen}
+				setIsMobileMenuOpen={setIsMobileMenuOpen}
+			/>
 			{/* )} */}
 		</div>
 	);

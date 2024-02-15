@@ -6,13 +6,9 @@ const ExperienceAmulette = () => {
       style={{
         backgroundImage: "url('Images/ExperienceAmulette/Experience-Amulette-BG.svg')",
         backgroundPosition: "bottom right",
-        // width: "100%",
-        // height: "400px", // Adjust the height as needed
-
-        backgroundSize: "20%",
         backgroundRepeat: "no-repeat",
       }}
-      className="experience-amulette-wrapper mt-9 pb-9"
+      className="experience-amulette-wrapper mt-9 pb-9 bg-[length:50%] md:bg-[length:40%] lg:bg-[length:30%]"
     >
       <div className="experience-amulette containerr max-w-amulette lg:px-amulette mx-auto flex flex-col lg:flex-row items-center justify-center space-y-8 px-5">
         <div className="col-left lg:w-1/2 flex flex-col items-start justify-center">

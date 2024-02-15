@@ -26,7 +26,7 @@ const CategoryTabs = ({ photosLibrarySidebar }) => {
 					category === "all"
 						? "bg-primaryColor text-white"
 						: "bg-categoryTabColor text-[#444]"
-				}  text-[14px] font-medium   rounded-full px-3 py-2 cursor-pointer mb-3`}
+				}  text-[14px] font-medium   rounded-full px-3 py-2 cursor-pointer md:mb-3`}
 			>
 				<img src="Images/PhotosLibrary/Category/All-Photos.svg" />
 				<span className="">All Photos</span>

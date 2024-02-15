@@ -1,10 +1,56 @@
 import "./App.css";
 import { RouterProvider } from "react-router-dom";
-import { router } from "./routes/routes";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 
+import { createBrowserRouter } from "react-router-dom";
+import MainLayout from "./Layout/MainLayout";
+import Home from "./pages/Home";
+import PhotosLibraryPage from "./pages/PhotosLibrary";
+import ContactUs from "./pages/ContactUs";
+import GetAppsPage from "./pages/GetApps";
+import ProductDetailsPage from "./pages/ProductDetailsPage";
+import ProductsPage from "./pages/Products";
+import React, { useState } from "react";
+
 function App() {
+
+	const [librayFilterOpen, setLibrayFilterOpen] = useState(false)
+
+	const router = createBrowserRouter([
+		{
+			path: "/",
+			element: <MainLayout librayFilterOpen={librayFilterOpen} setLibrayFilterOpen={setLibrayFilterOpen} />,
+			children: [
+				{
+					path: "/",
+					element: <Home />,
+				},
+				{
+					path: "/photos-library",
+					element: <PhotosLibraryPage librayFilterOpen={librayFilterOpen} setLibrayFilterOpen={setLibrayFilterOpen} />,
+				},
+				{
+					path: "/products",
+					element: <ProductsPage />,
+				},
+				{
+					path: "/get-the-app",
+					element: <GetAppsPage />,
+				},
+				{
+					path: "/contact-us",
+					element: <ContactUs />,
+				},
+				{
+					path: "/product-details",
+					element: <ProductDetailsPage />,
+				},
+			],
+		},
+	])
+
+
 	return (
 		<Provider store={store}>
 			<RouterProvider router={router} />;

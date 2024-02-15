@@ -1,27 +1,23 @@
 /* eslint-disable react/prop-types */
 import License from "../License/License";
 import Category from "../Category/Category";
-import { HiMiniXCircle } from "react-icons/hi2";
+import { FaArrowLeft } from "react-icons/fa";
 import classNames from "classnames";
 import React from "react";
-
-const PhotosLibrarySidebar = ({ sideBarHandler, sideBarOpen }) => {
+// border-[#979898]
+const PhotosLibrarySidebar = ({ librayFilterOpen }) => {
 	return (
 		<div
 			className={classNames(
-				"col-left p-5 pb-10 rounded-xl absolute  top-0 border bg-white z-50 w-full border-[#979898]",
+				"col-left p-5 fixed top-[74px] right-0 bottom-0 left-0  bg-white z-50 w-full ",
 				{
-					"active-sidebar-open": sideBarOpen === true,
-					"inactive-sidebar-open": sideBarOpen !== true,
+					"active-sidebar-open": librayFilterOpen === true,
+					"inactive-sidebar-open": librayFilterOpen !== true,
 				}
 			)}
 		>
-			<div
-				className="text-left flex justify-end z-[2000] cursor-pointer"
-				onClick={sideBarHandler}
-			>
-				<HiMiniXCircle className="w-6 h-6 text-primaryColor" />
-			</div>
+			
+			
 			<License />
 			<Category photosLibrarySidebar={true} />
 		</div>

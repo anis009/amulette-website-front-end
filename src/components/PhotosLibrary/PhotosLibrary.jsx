@@ -10,12 +10,26 @@ import { photos } from "./PhotoData";
 import { useSelector } from "react-redux";
 import React from "react";
 
-const PhotosLibrary = () => {
-	const [sideBarOpen, setSideBarOpen] = useState(false);
+// eslint-disable-next-line react/prop-types
+const PhotosLibrary = ({ librayFilterOpen, setLibrayFilterOpen }) => {
 	const [searchKeyword, setSearchKeyword] = useState("");
 	const [filteredPhotos, setFilteredPhotos] = useState(photos);
-    const { license,category } = useSelector((state) => state.photo);
+	const { license, category } = useSelector((state) => state.photo);
 
+	useEffect(() => {
+		console.log("side-bar-open", librayFilterOpen)
+	}, [librayFilterOpen])
+
+	useEffect(() => {
+		setFilteredPhotos(searchPhotos(photos, searchKeyword));
+	}, [searchKeyword]);
+
+	// TODO:: sidebar open handler
+	const sideBarHandler = () => {
+		setLibrayFilterOpen((prev) => !prev);
+	};
+
+	// ;
 	function searchPhotos(photos, searchTerm) {
 		// Convert the search term to lower case for case-insensitive comparison
 		const lowerCaseSearchTerm = searchTerm.toLowerCase();
@@ -49,17 +63,6 @@ const PhotosLibrary = () => {
 		return filteredPhotos;
 	}
 
-	useEffect(() => {
-		setFilteredPhotos(searchPhotos(photos, searchKeyword));
-	}, [searchKeyword]);
-
-	// TODO:: sidebar open handler
-	const sideBarHandler = () => {
-		setSideBarOpen((prev) => !prev);
-	};
-
-	// console.log("side-bar-open", sideBarOpen);
-
 	return (
 		<div className="photos-library-wrapper ">
 			<div className="containerr max-w-amulette lg:px-amulette flex flex-col items-start justify-between mx-auto md:space-x-8 md:bg-white bg-[#fdfdfd] photos-library md:flex-row">
@@ -73,15 +76,15 @@ const PhotosLibrary = () => {
 						<span className="text-[#25282B">Explore</span>
 						<span className="text-primaryColor"> Diverse Photos</span>
 					</h3>
-					<p className="text-sm lg:text-base leading-[26px] lg:leading-7 font-normal text-[#25282B] mt-1">
+					<p className="text-sm lg:text-base leading-[26px] lg:leading-7 font-normal text-[#25282B] my-2">
 						Dive into our extensive library of captivating photos. From stunning
 						landscapes to adorable pets, discover a world of creativity and
 						inspiration.
 					</p>
-					<div className="relative flex items-center justify-between search-wrapper mt-6">
+					<div className="relative flex items-center justify-between search-wrapper mt-4">
 						<PhotosLibrarySidebar
 							sideBarHandler={sideBarHandler}
-							sideBarOpen={sideBarOpen}
+							librayFilterOpen={librayFilterOpen}
 						/>
 
 						<div

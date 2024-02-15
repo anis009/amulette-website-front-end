@@ -2,7 +2,7 @@ import React from 'react';
 
 const AmuletteServiceCard = ({ service }) => {
   return (
-    <div className="service-card flex flex-col items-center justify-center">
+    <div className="service-card flex flex-col items-center justify-center mb-10 lg:mb-0">
       <img src={`${service.image}`} alt={service.title} />
       <h2 className="text-center text-lg lg:text-xl xl:text-2xl font-semibold text-black mt-3">
         {service.title}

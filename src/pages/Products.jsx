@@ -39,12 +39,12 @@ const ProductsPage = () => {
 					</p>
 					<div className="flex flex-row w-full search-sort-wrapper space-x-2 sm:space-x-5 lg:space-x-10 mt-7">
 						<div className="search-wrapper w-2/3 flex flex-row items-center justify-center space-x-2.5 border border-[#DADADA] rounded-full px-2 lg:px-4 py-2 lg:py-3.5">
-							<IoSearchSharp className="text-primaryColor" />
+							<IoSearchSharp className="text-primaryColor text-2xl" />
 							<input
 								onChange={(e) => setProductSearchTitle(e.target.value)}
 								type="text"
 								value={productSearchTitle}
-								className="w-full focus:border-0 indent-3 outline-none"
+								className="w-full focus:border-0 indent-1 outline-none"
 								placeholder="Search for product..."
 							/>
 						</div>
