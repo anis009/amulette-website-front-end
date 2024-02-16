@@ -15,12 +15,12 @@ const StayWithUs = () => {
 			className="py-8 lg:pb-16 bg-none lg:bg-[url('/Images/StayWithUs/Stay-With-Us.svg')]"
 		>
 			<div className="container stay-with-us max-w-amulette lg:px-amulette mx-auto   ">
-				<div className="stay-with-us-inner flex flex-col lg:flex-row items-center justify-center lg:justify-between bg-[#FFEFE8] rounded-2xl py-8 lg:py-14 px-5 sm:px-10 lg:px-16 ">
+				<div className="stay-with-us-inner flex flex-col lg:flex-row items-center justify-center lg:justify-between bg-[#FFEFE8] rounded-2xl py-5 sm:py-8 lg:py-14 px-5 sm:px-10 lg:px-16 ">
 					<div className="lg:w-1/2 w-full">
 						<h1 className="text-[#1B1B1B] text-xl text-center lg:text-left  lg:text-4xl font-Poppins font-bold lg:font-semibold">
 							Stay with us
 						</h1>
-						<p className="text-[#1B1B1B] font-Poppins lg:text-left text-center text-sm lg:text-lg font-normal mt-3 sm:pl-0 pl-2 mb-5 lg:mb-0">
+						<p className="text-[#1B1B1B] font-Poppins lg:text-left text-center text-sm lg:text-lg font-normal mt-3 sm:pl-0 pl-2 sm:mb-5 lg:mb-0">
 							Subscribe and be ready for an amazing experience
 						</p>
 					</div>

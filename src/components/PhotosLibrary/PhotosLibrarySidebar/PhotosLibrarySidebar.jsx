@@ -9,7 +9,7 @@ const PhotosLibrarySidebar = ({ librayFilterOpen }) => {
 	return (
 		<div
 			className={classNames(
-				"col-left p-5 fixed top-[74px] right-0 bottom-0 left-0  bg-white z-50 w-full ",
+				"col-left p-5 fixed top-[74px] right-0 bottom-0 left-0  bg-white z-[70] w-full ",
 				{
 					"active-sidebar-open": librayFilterOpen === true,
 					"inactive-sidebar-open": librayFilterOpen !== true,

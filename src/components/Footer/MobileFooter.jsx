@@ -1,7 +1,8 @@
+import React from "react";
 
 const MobileFooter = () => {
   return (
-    <div className="lg:hidden flex flex-col items-center justify-center pt-[136px] lg:pt-0">
+    <div className="lg:hidden flex flex-col items-center justify-center pt-[120px] sm:pt-[110px] lg:pt-0">
       <div className="logo-desc flex flex-col items-center">
         <img
           className="mb-5"
@@ -11,8 +12,7 @@ const MobileFooter = () => {
           alt="Amulette logo"
         />
         <p className="font-Montserrat text-xs  px-5 font-normal leading-8 tracking-[0.129px] text-center">
-        Express Yourself with Amulette.
-A compact, stylish, and customizable badge that showcases your unique personality. 
+          Express Yourself with Amulette. A compact, stylish, and customizable badge that showcases your unique personality. 
         </p>
       </div>
       <div className="about-follow-us w-full px-11 flex flex-row items-center justify-between mt-9 mb-11">

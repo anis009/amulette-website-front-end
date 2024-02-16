@@ -63,7 +63,7 @@ body {
 }
 .mobile-nav-close {
 	display: none;
-	animation: mobileNavCloseAnm 1s ease-in-out;
+	animation: mobileNavCloseAnm 500ms ease-in-out;
 }
 @keyframes mobileNavCloseAnm {
 	0% {
@@ -99,7 +99,7 @@ body {
 }
 .inactive-sidebar-open {
 	display: none;
-	animation: sidebarCloseAnimation 1s ease-in-out;
+	animation: sidebarCloseAnimation 500ms ease-in-out;
 }
 @keyframes sidebarCloseAnimation {
 	0% {
