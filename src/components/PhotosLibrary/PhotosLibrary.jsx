@@ -21,8 +21,16 @@ const PhotosLibrary = ({ librayFilterOpen, setLibrayFilterOpen }) => {
 	}, [librayFilterOpen])
 
 	useEffect(() => {
-		setFilteredPhotos(searchPhotos(photos, searchKeyword));
-	}, [searchKeyword]);
+		let _tempPhotos = photos
+		if (license !== 'all') {
+			_tempPhotos = _tempPhotos.filter((_it) => _it.license === license)
+		}
+		if (category !== 'all') {
+			_tempPhotos = _tempPhotos.filter((_it) => _it.category === category)
+		}
+		const _searched = searchPhotos(_tempPhotos, searchKeyword)
+		setFilteredPhotos(_searched);
+	}, [searchKeyword, license, category]);
 
 	// TODO:: sidebar open handler
 	const sideBarHandler = () => {
@@ -108,7 +116,10 @@ const PhotosLibrary = ({ librayFilterOpen, setLibrayFilterOpen }) => {
 					{/* photos section columns-3 lg:columns-4 */}
 					<div className=" grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4  gap-5 mt-6 overflow-hidden">
 						{filteredPhotos?.map((photo, index) => (
-							<PhotoCard key={index} photo={photo} />
+							<PhotoCard
+								key={index}
+								photo={photo}
+							/>
 						))}
 					</div>
 					<Pagination />

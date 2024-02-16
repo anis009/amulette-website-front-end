@@ -131,9 +131,9 @@ const CategoryTabs = ({ photosLibrarySidebar }) => {
 				<span className="">Space</span>
 			</div>
 			<div
-				onClick={() => dispatch(setCategory("food"))}
+				onClick={() => dispatch(setCategory("foods"))}
 				className={`tab-item w-full flex flex-row items-center justify-start space-x-2 ${
-					category === "food"
+					category === "foods"
 						? "bg-primaryColor text-white"
 						: "bg-categoryTabColor text-[#444]"
 				}  text-[14px] font-medium   rounded-full px-3 py-2 cursor-pointer`}
