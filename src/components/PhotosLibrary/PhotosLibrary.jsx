@@ -122,7 +122,13 @@ const PhotosLibrary = ({ librayFilterOpen, setLibrayFilterOpen }) => {
 							/>
 						))}
 					</div>
-					<Pagination />
+					{filteredPhotos.length === 0 && (
+						<div className="text-center">
+							No Photos to show.
+						</div>
+					)}
+					{filteredPhotos.length > 0 && <Pagination />}
+					
 				</div>
 			</div>
 		</div>
