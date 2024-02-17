@@ -2,7 +2,7 @@ import PhotosLibrary from "../components/PhotosLibrary/PhotosLibrary";
 
 const PhotosLibraryPage = (props) => {
 	return (
-		<div className="photos-library-page bg-[#FDFDFD]  p-6 lg:pt-7 lg:p-0">
+		<div className="photos-library-page bg-[#FDFDFD]  py-6 lg:pt-8">
 			<PhotosLibrary {...props} />
 		</div>
 	);

@@ -12,7 +12,7 @@ const DesktopHeader = () => {
 				<img src="Images/Header/Logo.svg" alt="amulette logo" />
 			</div>
 			<div className="header-menu-items">
-				<ul className="flex flex-row items-center justify-center space-x-10 text-lg font-semibold text-menuColor font-Poppins">
+				<ul className="flex flex-row items-center justify-center space-x-5 xl:space-x-10 xl:text-lg font-semibold text-menuColor font-Poppins">
 					{menuItems.map((item) => {
 						return (
 							<li key={item.id} className="">
