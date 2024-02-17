@@ -45,9 +45,9 @@ const Header = ({ librayFilterOpen, setLibrayFilterOpen }) => {
 
 	// shadow-md 
 	return (
-		<div className={`header-wrapper z-[150] sticky top-0 left-0 bg-white select-none  ${isMobileMenuOpen ? ' h-svh' : ''}`}>
+		<div className={`header-wrapper z-[150] sticky top-0 left-0 bg-white select-none shadow-[0px_3px_10px_2px_#0000000A]  ${isMobileMenuOpen ? ' h-svh' : ''}`}>
 			<DesktopHeader />
-			<div className="mobile-header shadow-[0px_3px_10px_2px_#0000000A] lg:hidden flex flex-row items-center justify-between px-5 py-4">
+			<div className="mobile-header lg:hidden flex flex-row items-center justify-between px-5 py-4">
 				{windowWidth < 768 && librayFilterOpen ? (
 					<div
 						className="col-left"
