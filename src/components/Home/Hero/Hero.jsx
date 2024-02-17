@@ -6,7 +6,7 @@ const Hero = () => {
       // style={{ backgroundImage: `url('Images/Hero/Hero-BG.svg')` }}
       className="hero-wrapper bg-[url('/Images/Hero/hero-bg-mobile.svg')] sm:bg-heroDesktop bg-contain sm:bg-cover bg-right-top bg-no-repeat sm:bg-center pt-5 sm:pt-10 lg:pt-[160px]  pb-5 sm:pb-10  lg:pb-[160px] "
     >
-      <div className="hero containerr max-w-amulette lg:px-amulette mx-auto  flex flex-col items-start justify-center lg:justify-start px-5 ">
+      <div className="hero custom-container  flex flex-col items-start justify-center lg:justify-start ">
         <h3 className="text-left uppercase text-primaryColor font-Poppins font-bold text-sm lg:text-xl">
           Express Yourself with Amulette
         </h3>

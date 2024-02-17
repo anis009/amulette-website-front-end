@@ -9,7 +9,7 @@ const ContactUs = () => {
 					"linear-gradient(180deg, rgba(246, 95, 25, 0.10) 0%, rgba(246, 95, 25, 0.01) 100%)",
 			}}
 		>
-			<div className="containerr max-w-amulette lg:px-amulette mx-auto contact-us flex flex-col items-center justify-center px-5 lg:px--0">
+			<div className="custom-container contact-us flex flex-col items-center justify-center">
 				<h1 className="text-center font-Poppins text-xl lg:text-[40px] font-bold">
 					Contact Us for any Queries
 				</h1>

@@ -7,7 +7,7 @@ import React from "react";
 const DesktopHeader = () => {
 	const [lang, setLang] = useState("english");
 	return (
-		<div className="containerr max-w-amulette lg:px-amulette hidden lg:flex flex-row items-center justify-between py-6 mx-auto header">
+		<div className="custom-container hidden lg:flex flex-row items-center justify-between py-6 header">
 			<div className="logo">
 				<img src="Images/Header/Logo.svg" alt="amulette logo" />
 			</div>

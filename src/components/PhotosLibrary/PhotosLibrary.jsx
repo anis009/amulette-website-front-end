@@ -73,7 +73,7 @@ const PhotosLibrary = ({ librayFilterOpen, setLibrayFilterOpen }) => {
 
 	return (
 		<div className="photos-library-wrapper ">
-			<div className="containerr max-w-amulette lg:px-amulette flex flex-col items-start justify-between mx-auto md:space-x-8 md:bg-white bg-[#fdfdfd] photos-library md:flex-row">
+			<div className="custom-container flex flex-col items-start justify-between md:space-x-8 md:bg-white bg-[#fdfdfd] photos-library md:flex-row">
 				<div className="col-left md:w-4/12 lg:w-3/12 px-7 py-7 md:block hidden rounded-3xl border border-[#979898]">
 					<License />
 					<Category photosLibrarySidebar={false} />

@@ -4,7 +4,7 @@ import { FaArrowLeft } from "react-icons/fa";
 
 const ProductNotFound = () => {
   return (
-    <div className="product-not-found flex flex-col items-center justify-center relative container px--5 max-w-amulette px-amulette mx--auto product-not-found-wrapper">
+    <div className="product-not-found custom-container flex flex-col items-center justify-center relative product-not-found-wrapper">
       <button className="absolute flex items-center px-4 py-2 border-2 top-0 left-[5%] text-primaryColor border-primaryColor rounded-3xl">
 				<FaArrowLeft />
 				<strong className="ml-1">Back</strong>

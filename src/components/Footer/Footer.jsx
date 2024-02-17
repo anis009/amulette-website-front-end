@@ -11,7 +11,7 @@ const Footer = () => {
 				<StayWithUs />
 			</div>
 			<div className="footer-wrapper relative bg-[#25282B] pt-[60px] lg:pb-[60px] mb-0 mt-[140px] lg:mt-0">
-				<div className="container max-w-amulette lg:px-amulette mx-auto px-0 footer-main flex flex-col lg:flex-row items-center lg:items-start justify-between text-white">
+				<div className="custom-container footer-main flex flex-col lg:flex-row items-center lg:items-start justify-between text-white">
 					<DesktopFooter />
 					<MobileFooter />
 				</div>

@@ -10,11 +10,14 @@ export default {
 					xl: "1400px",
 				},
 			},
+			screens: {
+				amulette: "1540px", // Custom breakpoint
+			},
 			maxWidth: {
 				amulette: "1400px", // Custom max width
 			},
 			padding: {
-				amulette: "5%", // Custom padding
+				amulette: "8%", // Custom padding
 			},
 			colors: {
 				primaryColor: "#F65F19",

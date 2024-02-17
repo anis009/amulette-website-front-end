@@ -46,7 +46,7 @@ const OurProducts = ({ isOurProduct = true }) => {
 
 	return (
 		<div className="our-products-wrapper mt-[52px]">
-			<div className="our-products  max-w-amulette lg:px-amulette mx-auto px-5 ">
+			<div className="our-products  custom-container">
 				{isOurProduct && (
 					<h1 className="text-xl lg:text-[40px] font-semibold font-Poppins text-center mb-2">
 						<span className="text-primaryColor">Our </span>

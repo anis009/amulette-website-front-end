@@ -25,7 +25,7 @@ const AmuletteFeatures = () => {
   ];
   return (
     <div style={{ backgroundColor: 'rgba(246, 95, 25, 0.10)' }} className="amulette-service-wrapper py-14">
-      <div className="amulette-service containerr max-w-amulette lg:px-amulette mx-auto px-5 lg::px-0">
+      <div className="amulette-service custom-container">
         <h1 className="text-xl lg:text-[40px] font-semibold font-Poppins text-center">
           <span className="text-primaryColor">Amulette </span>
           <span className="">

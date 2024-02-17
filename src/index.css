@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .custom-container {
+    @apply max-w-amulette px-5 md:px-10 lg:px-amulette amulette:px-0 mx-auto;
+  }
+}
+
 html,
 body {
 	margin: 0;
