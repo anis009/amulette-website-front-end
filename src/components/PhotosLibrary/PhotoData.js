@@ -116,7 +116,7 @@ export const photos = [
     description: `molla`,
     metaData: ``,
     category: `sports`,
-    license: `free`,
+    license: `premium`,
     isDimond: false,
   },
   {
