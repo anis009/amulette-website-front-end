@@ -88,6 +88,7 @@ const CategoryTabs = ({ photosLibrarySidebar }) => {
 				<span className="">Animals</span>
 			</div>
 			<div
+			onClick={() => dispatch(setCategory("abstract"))}
 				className={`tab-item w-full flex flex-row items-center justify-start space-x-2 ${
 					category === "abstract"
 						? "bg-primaryColor text-white"
