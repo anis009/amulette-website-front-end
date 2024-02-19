@@ -1,13 +1,13 @@
+/* eslint-disable react/prop-types */
 // import { NavLink } from "react-router-dom";
 // import { menuItems } from "../../constants/constant-data";
 import { RiMenu5Fill } from "react-icons/ri";
 import { IoCloseSharp } from "react-icons/io5";
-import { AiOutlineCaretDown } from "react-icons/ai"
+import { AiOutlineCaretDown } from "react-icons/ai";
 
 import DesktopHeader from "./DesktopHeader";
 import { useEffect, useLayoutEffect, useState } from "react";
 import MobileMenu from "./MobileMenu";
-import React from "react";
 import { useLocation } from "react-router-dom";
 
 const Header = ({ librayFilterOpen, setLibrayFilterOpen }) => {
@@ -20,39 +20,43 @@ const Header = ({ librayFilterOpen, setLibrayFilterOpen }) => {
 	const { pathname } = useLocation();
 	useEffect(() => {
 		window.scrollTo(0, 0);
-	}, [pathname])
+	}, [pathname]);
 
 	useEffect(() => {
 		if (isMobileMenuOpen) {
-			document.body.style.overflow = 'hidden'
+			document.body.style.overflow = "hidden";
 		} else {
-			document.body.style.overflow = ''
+			document.body.style.overflow = "";
 		}
-	}, [isMobileMenuOpen])
+	}, [isMobileMenuOpen]);
 
 	useLayoutEffect(() => {
 		const updateSize = () => {
 			setWindowWidth(window.innerWidth);
-		}
-		window.addEventListener('resize', updateSize);
+		};
+		window.addEventListener("resize", updateSize);
 		updateSize();
-		return () => window.removeEventListener('resize', updateSize);
-	}, [])
+		return () => window.removeEventListener("resize", updateSize);
+	}, []);
 
 	useEffect(() => {
 		// console.log('windowWidth: ', windowWidth)767
-	}, [windowWidth])
+	}, [windowWidth]);
 
-	// shadow-md 
+	// shadow-md
 	return (
-		<div className={`header-wrapper z-[150] sticky top-0 left-0 bg-white select-none shadow-[0px_3px_10px_2px_#0000000A]  ${isMobileMenuOpen ? ' h-svh' : ''}`}>
+		<div
+			className={`header-wrapper z-[150] sticky top-0 left-0 bg-white select-none shadow-[0px_3px_10px_2px_#0000000A]  ${
+				isMobileMenuOpen ? " h-svh" : ""
+			}`}
+		>
 			<DesktopHeader />
-			<div className="mobile-header custom-container lg:hidden flex flex-row items-center justify-between py-4">
+			<div className="flex flex-row items-center justify-between py-4 mobile-header custom-container lg:hidden">
 				{windowWidth < 768 && librayFilterOpen ? (
 					<div
 						className="col-left"
 						onClick={(e) => {
-							setLibrayFilterOpen(false)
+							setLibrayFilterOpen(false);
 						}}
 					>
 						<img src="Images/Header/sidebar-back-icon.svg" alt="" />
@@ -61,8 +65,8 @@ const Header = ({ librayFilterOpen, setLibrayFilterOpen }) => {
 					<div
 						className="col-left"
 						onClick={(e) => {
-							console.log('header-icon: ', e.target)
-							setIsMobileMenuOpen(!isMobileMenuOpen)
+							console.log("header-icon: ", e.target);
+							setIsMobileMenuOpen(!isMobileMenuOpen);
 						}}
 					>
 						{isMobileMenuOpen && (
@@ -71,12 +75,7 @@ const Header = ({ librayFilterOpen, setLibrayFilterOpen }) => {
 								size={26}
 							/>
 						)}
-						{!isMobileMenuOpen && (
-							<RiMenu5Fill
-
-								size={26}
-							/>
-						)}
+						{!isMobileMenuOpen && <RiMenu5Fill size={26} />}
 					</div>
 				)}
 
@@ -91,7 +90,7 @@ const Header = ({ librayFilterOpen, setLibrayFilterOpen }) => {
 						</span>
 						<img src="Images/Header/Cart.svg" /> */}
 						</div>
-						<div className="border flex items-center px-2 border-primaryColor py-2 rounded-3xl relative ">
+						<div className="relative flex items-center px-2 py-2 border border-primaryColor rounded-3xl ">
 							<img
 								src={
 									lang === "english"
@@ -104,7 +103,7 @@ const Header = ({ librayFilterOpen, setLibrayFilterOpen }) => {
 							<select
 								value={lang}
 								onChange={(e) => setLang(e.target.value)}
-								className="lang outline-none px-2 rounded-3xl bg-white appearance-none pr-5"
+								className="px-2 pr-5 bg-white outline-none appearance-none lang rounded-3xl"
 							>
 								<option selected className="m-2" value="english">
 									Eng
