@@ -4,7 +4,7 @@ import { IoSearchSharp } from "react-icons/io5";
 import Category from "./Category/Category";
 import Pagination from "./Pagination/Pagination";
 import { HiAdjustmentsHorizontal } from "react-icons/hi2";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import PhotosLibrarySidebar from "./PhotosLibrarySidebar/PhotosLibrarySidebar";
 import { photos } from "./PhotoData";
 import { useDispatch, useSelector } from "react-redux";
@@ -51,11 +51,11 @@ const PhotosLibrary = ({ librayFilterOpen, setLibrayFilterOpen }) => {
 		[category, license]
 	);
 
-	useEffect(() => {
+	useMemo(() => {
 		if (category?.length === 0) {
 			dispatch(setCategory("all"));
 		}
-	}, [category?.length]);
+	}, [category?.length, dispatch]);
 	useEffect(() => {
 		console.log("side-bar-open", librayFilterOpen);
 	}, [librayFilterOpen]);

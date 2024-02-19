@@ -21,6 +21,10 @@ export const photoSlice = createSlice({
 					(_item) => _item !== action.payload
 				);
 			}
+
+			if (state.category.length > 1 && state.category.includes("all")) {
+				state.category = state.category.filter((_item) => _item !== "all");
+			}
 		},
 	},
 });
