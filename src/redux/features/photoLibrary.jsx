@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
 	license: "all",
-	category: "all",
+	category: ["all"],
 };
 
 export const photoSlice = createSlice({
@@ -13,7 +13,14 @@ export const photoSlice = createSlice({
 			state.license = action.payload;
 		},
 		setCategory: (state, action) => {
-			state.category = action.payload;
+			const idx = state.category.findIndex((_item) => _item === action.payload);
+			if (idx < 0 && action.payload) {
+				state.category.push(action.payload);
+			} else {
+				state.category = state.category.filter(
+					(_item) => _item !== action.payload
+				);
+			}
 		},
 	},
 });
