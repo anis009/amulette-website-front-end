@@ -1,6 +1,6 @@
 {
   "name": "amulette",
-  "homepage":"https://amulette.fun",
+  "homepage": "https://amulette.fun",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@lottiefiles/react-lottie-player": "^3.5.3",
     "@reduxjs/toolkit": "^2.1.0",
     "classnames": "^2.5.1",
     "install": "^0.13.0",
