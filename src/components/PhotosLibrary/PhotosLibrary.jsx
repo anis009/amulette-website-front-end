@@ -6,73 +6,115 @@ import Pagination from "./Pagination/Pagination";
 import { HiAdjustmentsHorizontal } from "react-icons/hi2";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import PhotosLibrarySidebar from "./PhotosLibrarySidebar/PhotosLibrarySidebar";
-import { photos } from "./PhotoData";
+// import { photos } from "./PhotoData";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategory } from "../../redux/features/photoLibrary";
+import { useGetAllPhotosMutation } from "../../redux/Api/photoApi";
+import { MoonLoader } from "react-spinners";
 
 // eslint-disable-next-line react/prop-types
 const PhotosLibrary = ({ librayFilterOpen, setLibrayFilterOpen }) => {
 	const [searchKeyword, setSearchKeyword] = useState("");
-	const [filteredPhotos, setFilteredPhotos] = useState(photos);
+	const [searchTerm, setSearchTerm] = useState("");
+	const [page, setPage] = useState(1);
+
+	// const [filteredPhotos, setFilteredPhotos] = useState(photos);
 	const { license, category } = useSelector((state) => state.photo);
 	const dispatch = useDispatch();
-	const searchPhotos = useCallback(
-		(photos, searchTerm) => {
-			// Convert the search term to lower case for case-insensitive comparison
-			const lowerCaseSearchTerm = searchTerm.toLowerCase();
-			// Filter the photos based on the search term
-			const filteredPhotos = photos.filter((photo) => {
-				// Check if the search term is included in the title, description, or metaData
-				// Convert each field to lower case to ensure case-insensitive comparison
-				const titleMatch = photo.title
-					.toLowerCase()
-					.includes(lowerCaseSearchTerm);
-				const descriptionMatch = photo.description
-					.toLowerCase()
-					.includes(lowerCaseSearchTerm);
-				const metaDataMatch = photo.metaData
-					.toLowerCase()
-					.includes(lowerCaseSearchTerm);
-				const matchedCat = photo.category.includes(category);
-				const matchedLicense = photo.license.includes(license);
-				// Return true if the search term matches any of the fields, causing this photo to be included in the filter result
-				return (
-					titleMatch ||
-					descriptionMatch ||
-					metaDataMatch ||
-					matchedCat ||
-					matchedLicense
-				);
-			});
 
-			// Return the filtered array of photos
-			return filteredPhotos;
-		},
-		[category, license]
-	);
+	const [getAllPhotos, { isSuccess, data: photos, isLoading }] =
+		useGetAllPhotosMutation();
+	console.log(isSuccess, photos);
+	useEffect(() => {
+		const fetchPhotos = async () => {
+			try {
+				await getAllPhotos({
+					categories: category,
+					limit: 10,
+					page: page,
+					type: license,
+					searchTerm: searchTerm,
+				});
+			} catch (error) {
+				console.log(error);
+			}
+		};
+		fetchPhotos();
+	}, [category, getAllPhotos, license, page, searchTerm]);
+
+	const handleSearch = useCallback(() => {
+		if (searchKeyword.length > 3) {
+			setSearchTerm(searchKeyword);
+		} else {
+			setSearchTerm("");
+		}
+	}, [searchKeyword]);
+
+	useEffect(() => {
+		handleSearch();
+	}, [handleSearch]);
+
+	const keyWordTypeHandler = (e) => {
+		setSearchKeyword(e.target.value);
+	};
+
+	// const searchPhotos = useCallback(
+	// 	(photos, searchTerm) => {
+	// 		// Convert the search term to lower case for case-insensitive comparison
+	// 		const lowerCaseSearchTerm = searchTerm.toLowerCase();
+	// 		// Filter the photos based on the search term
+	// 		const filteredPhotos = photos.filter((photo) => {
+	// 			// Check if the search term is included in the title, description, or metaData
+	// 			// Convert each field to lower case to ensure case-insensitive comparison
+	// 			const titleMatch = photo.title
+	// 				.toLowerCase()
+	// 				.includes(lowerCaseSearchTerm);
+	// 			const descriptionMatch = photo.description
+	// 				.toLowerCase()
+	// 				.includes(lowerCaseSearchTerm);
+	// 			const metaDataMatch = photo.metaData
+	// 				.toLowerCase()
+	// 				.includes(lowerCaseSearchTerm);
+	// 			const matchedCat = photo.category.includes(category);
+	// 			const matchedLicense = photo.license.includes(license);
+	// 			// Return true if the search term matches any of the fields, causing this photo to be included in the filter result
+	// 			return (
+	// 				titleMatch ||
+	// 				descriptionMatch ||
+	// 				metaDataMatch ||
+	// 				matchedCat ||
+	// 				matchedLicense
+	// 			);
+	// 		});
+
+	// 		// Return the filtered array of photos
+	// 		return filteredPhotos;
+	// 	},
+	// 	[category, license]
+	// );
 
 	useMemo(() => {
 		if (category?.length === 0) {
 			dispatch(setCategory("all"));
 		}
 	}, [category?.length, dispatch]);
-	useEffect(() => {
-		console.log("side-bar-open", librayFilterOpen);
-	}, [librayFilterOpen]);
+	// useEffect(() => {
+	// 	console.log("side-bar-open", librayFilterOpen);
+	// }, [librayFilterOpen]);
 
-	useEffect(() => {
-		let _tempPhotos = photos;
-		if (license !== "all") {
-			_tempPhotos = _tempPhotos.filter((_it) => _it.license === license);
-		}
-		if (!category.includes("all")) {
-			_tempPhotos = _tempPhotos.filter((_it) =>
-				category.includes(_it.category)
-			);
-		}
-		const _searched = searchPhotos(_tempPhotos, searchKeyword);
-		setFilteredPhotos(_searched);
-	}, [searchKeyword, license, category, searchPhotos]);
+	// useEffect(() => {
+	// 	let _tempPhotos = photos;
+	// 	if (license !== "all") {
+	// 		_tempPhotos = _tempPhotos.filter((_it) => _it.license === license);
+	// 	}
+	// 	if (!category.includes("all")) {
+	// 		_tempPhotos = _tempPhotos.filter((_it) =>
+	// 			category.includes(_it.category)
+	// 		);
+	// 	}
+	// 	const _searched = searchPhotos(_tempPhotos, searchKeyword);
+	// 	setFilteredPhotos(_searched);
+	// }, [searchKeyword, license, category, searchPhotos]);
 
 	// TODO:: sidebar open handler
 	const sideBarHandler = () => {
@@ -113,7 +155,7 @@ const PhotosLibrary = ({ librayFilterOpen, setLibrayFilterOpen }) => {
 						<div className="search border w-full flex md:ml-0 ml-3 flex-row items-center justify-start space-x-2.5 border-[#DADADA] rounded-3xl px-6 py-3  ">
 							<IoSearchSharp color="#F65F19" size={18} />{" "}
 							<input
-								onChange={(e) => setSearchKeyword(e.target.value)}
+								onChange={keyWordTypeHandler}
 								value={searchKeyword}
 								className="w-[85%] focus:border-0 indent-3 outline-none "
 								type="text"
@@ -122,15 +164,23 @@ const PhotosLibrary = ({ librayFilterOpen, setLibrayFilterOpen }) => {
 						</div>
 					</div>
 					{/* photos section columns-3 lg:columns-4 */}
+					{isLoading && (
+						<div className="flex items-center justify-center w-full mt-[20px]">
+							<MoonLoader color="#F65F19" className="mx-auto" />
+						</div>
+					)}
 					<div className="grid grid-cols-2 gap-5 mt-6 overflow-hidden sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4">
-						{filteredPhotos?.map((photo, index) => (
-							<PhotoCard key={index} photo={photo} />
-						))}
+						{photos &&
+							photos?.data?.map((photo, index) => (
+								<PhotoCard key={index} photo={photo} />
+							))}
 					</div>
-					{filteredPhotos.length === 0 && (
+					{photos && photos?.data.length === 0 && (
 						<div className="text-center">No Photos to show.</div>
 					)}
-					{filteredPhotos.length > 0 && <Pagination />}
+					{photos && photos?.data.length > 0 && (
+						<Pagination setPage={setPage} size={photos?.size} page={page} />
+					)}
 				</div>
 			</div>
 		</div>

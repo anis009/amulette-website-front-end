@@ -3,10 +3,7 @@ import ProductCard from "../components/Home/OurProducts/ProductCard";
 import { productsData } from "../components/Home/OurProducts/ProductData";
 import { IoSearchSharp } from "react-icons/io5";
 import ProductNotFound from "../components/ProductNotFound";
-import { BsXCircle } from "react-icons/bs";
-import ProductDetailsPage from "./ProductDetailsPage";
-import React from "react";
-import { PiCaretDownBold  } from "react-icons/pi";
+import { PiCaretDownBold } from "react-icons/pi";
 import ProductDetailsModal from "./ProductDetailsModal";
 const ProductsPage = () => {
 	const [productSearchTitle, setProductSearchTitle] = useState("");
@@ -37,18 +34,18 @@ const ProductsPage = () => {
 					<p className="text-[#25282B] text-[12px] lg:text-sm font-normal text-left mt-4">
 						Elevate Your Experience with Our Range of Stylish Accessories
 					</p>
-					<div className="flex flex-row w-full search-sort-wrapper space-x-2 sm:space-x-5 lg:space-x-10 mt-7">
+					<div className="flex flex-row w-full space-x-2 search-sort-wrapper sm:space-x-5 lg:space-x-10 mt-7">
 						<div className="search-wrapper w-2/3 flex flex-row items-center justify-center space-x-2 lg:space-x-2.5 border border-[#DADADA] rounded-full px-3 lg:px-4 py-2 lg:py-3.5">
-							<IoSearchSharp className="text-primaryColor text-lg lg:text-2xl" />
+							<IoSearchSharp className="text-lg text-primaryColor lg:text-2xl" />
 							<input
 								onChange={(e) => setProductSearchTitle(e.target.value)}
 								type="text"
 								value={productSearchTitle}
-								className="w-full focus:border-0 lg:indent-1 outline-none"
+								className="w-full outline-none focus:border-0 lg:indent-1"
 								placeholder="Search for product..."
 							/>
 						</div>
-						<div className="filter-wrapper w-1/3 relative">
+						<div className="relative w-1/3 filter-wrapper">
 							<select
 								value={sortOption}
 								onChange={(e) => setSortOption(e.target.value)}
@@ -57,16 +54,20 @@ const ProductsPage = () => {
 								{/* <option disabled value="Sort by">
 									Sort By: Price low to high
 								</option> */}
-								<option value="low-to-high">Sort By: Price - Low to High</option>
-								<option value="high-to-low">Sort By: Price - High to Low</option>
+								<option value="low-to-high">
+									Sort By: Price - Low to High
+								</option>
+								<option value="high-to-low">
+									Sort By: Price - High to Low
+								</option>
 							</select>
-							<PiCaretDownBold className="absolute right-2 sm:right-4 top-[50%] translate-y-[-50%]"/>
+							<PiCaretDownBold className="absolute right-2 sm:right-4 top-[50%] translate-y-[-50%]" />
 						</div>
 					</div>
 					<div className="grid grid-cols-2 gap-y-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-9">
 						{filteredProducts.length > 0 &&
 							filteredProducts?.map((data, index) => (
-								<ProductCard 
+								<ProductCard
 									setShowModal={setShowModal}
 									key={index}
 									product={data}
@@ -79,9 +80,7 @@ const ProductsPage = () => {
 				{filteredProducts.length <= 0 && <ProductNotFound />}
 			</div>
 
-			{showModal && (
-				<ProductDetailsModal setShowModal={setShowModal} />
-			)}
+			{showModal && <ProductDetailsModal setShowModal={setShowModal} />}
 		</>
 	);
 };

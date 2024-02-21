@@ -3,6 +3,10 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
 	license: "all",
 	category: ["all"],
+	photoList: [],
+	page: 1,
+	limit: 10,
+	size: 0,
 };
 
 export const photoSlice = createSlice({
@@ -25,10 +29,16 @@ export const photoSlice = createSlice({
 			// 	state.category = state.category.filter((_item) => _item !== "all");
 			// }
 		},
+		setPhotoList: (state, action) => {
+			state.limit = action.payload?.limit;
+			state.page = action.payload?.page;
+			state.size = action.payload?.size;
+			state.photoList = action.payload?.data;
+		},
 	},
 });
 
 // Action creators are generated for each case reducer function
-export const { setLicense, setCategory } = photoSlice.actions;
+export const { setLicense, setCategory, setPhotoList } = photoSlice.actions;
 
 export default photoSlice.reducer;
