@@ -30,7 +30,7 @@ const PhotosLibrary = ({ librayFilterOpen, setLibrayFilterOpen }) => {
 			try {
 				await getAllPhotos({
 					categories: category,
-					limit: 10,
+					limit: 16,
 					page: page,
 					type: license,
 					searchTerm: searchTerm,
