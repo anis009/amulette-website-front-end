@@ -1,21 +1,35 @@
 /* eslint-disable react/prop-types */
-import { Player, Controls } from "@lottiefiles/react-lottie-player";
-
-const AmuletteServiceCard = ({ service }) => {
+import { Player } from "@lottiefiles/react-lottie-player";
+import lottflies from "../../../assets/lottieflies/Flow 8.json";
+const AmuletteServiceCard = ({ service, index }) => {
 	return (
-		<div className="flex flex-col items-center justify-center mb-10 service-card lg:mb-0">
+		<div className="flex flex-col items-center justify-center mb-10 service-card lg:mb-0 relative">
 			{/* <img src={`${service.image}`} alt={service.title} /> */}
-			<Player
-				autoplay
-				loop
-				src={service.src}
-				style={{ height: "300px", width: "300px" }}
-			>
-				{/* <Controls
-					visible={true}
-					buttons={["play", "repeat", "frame", "debug"]}
-				/> */}
-			</Player>
+
+			<div className="relative ">
+				<Player
+					autoplay
+					loop
+					src={service.src}
+					style={{ height: "300px", width: "300px" }}
+				></Player>
+
+				{index === 0 && (
+					<Player
+						autoplay
+						loop
+						src={lottflies}
+						style={{
+							height: "120px",
+							width: "120px",
+							position: "absolute",
+							bottom: 0,
+							right: 80,
+						}}
+					></Player>
+				)}
+			</div>
+			<img src={service.image} alt="" className="my-[10px]" />
 			<h2 className="mt-3 text-lg font-semibold text-center text-black lg:text-xl xl:text-2xl">
 				{service.title}
 			</h2>

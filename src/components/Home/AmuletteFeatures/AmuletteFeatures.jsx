@@ -10,21 +10,21 @@ const AmuletteFeatures = () => {
 			title: "Connect with Ease",
 			description:
 				"Seamless Bluetooth pairing with our Amulette app. Connect and share moments effortlessly",
-			image: "Images/AmuletteFeatures/Ease.svg",
+			image: "Images/AmuletteFeatures/1.png",
 			src: lottieFiles1,
 		},
 		{
 			title: "Display Your Personality",
 			description:
 				"Wearable, compact, and customizable – let your style shine with Amulette",
-			image: "Images/AmuletteFeatures/Personality.svg",
+			image: "Images/AmuletteFeatures/2.png",
 			src: lottieFiles2,
 		},
 		{
 			title: "Share and Explore",
 			description:
 				"Share images with friends and create lasting memories. Explore a world of creativity together",
-			image: "Images/AmuletteFeatures/Explore.svg",
+			image: "Images/AmuletteFeatures/3.png",
 			src: lottieFiles3,
 		},
 	];
@@ -48,7 +48,7 @@ const AmuletteFeatures = () => {
 				</p>
 				<div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:mt-[60px]">
 					{amuletteServices?.map((service, index) => (
-						<AmuletteServiceCard key={index} service={service} />
+						<AmuletteServiceCard key={index} index={index} service={service} />
 					))}
 				</div>
 			</div>
