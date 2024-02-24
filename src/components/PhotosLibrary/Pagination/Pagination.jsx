@@ -6,6 +6,8 @@ const Pagination = ({ setPage, size, page }) => {
 	const pages = Math.ceil(size / 10);
 	const setPageHandler = (index) => {
 		setPage(index);
+		// Scroll to the top of the page
+		window.scrollTo({ top: 0, behavior: "smooth" });
 	};
 
 	return (
