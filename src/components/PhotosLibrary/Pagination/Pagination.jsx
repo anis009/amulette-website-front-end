@@ -1,9 +1,17 @@
 /* eslint-disable react/prop-types */
 import classNames from "classnames";
+import { useEffect, useState } from "react";
 import { AiOutlineCaretLeft, AiOutlineCaretRight } from "react-icons/ai";
 
 const Pagination = ({ setPage, size, page }) => {
-	const pages = Math.ceil(size / 10);
+	const [pages, setPages] = useState();
+
+	useEffect(() => {
+		if (size !== 0) {
+			const pages = Math.ceil(size / 16);
+			setPages(pages);
+		}
+	}, [size]);
 	const setPageHandler = (index) => {
 		setPage(index);
 		// Scroll to the top of the page

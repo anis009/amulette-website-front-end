@@ -18,15 +18,15 @@ export const photoSlice = createSlice({
 		},
 		setCategory: (state, action) => {
 			const idx = state.category.findIndex((_item) => _item === action.payload);
+			if (state.category.length === 1 && state.category.includes("all")) {
+				state.category = state.category.filter((_item) => _item !== "all");
+			}
 			if (idx < 0 && action.payload) {
 				state.category.push(action.payload);
 			} else {
 				state.category = state.category.filter(
 					(_item) => _item !== action.payload
 				);
-			}
-			if (state.category.length > 1 && state.category.includes("all")) {
-				state.category = state.category.filter((_item) => _item !== "all");
 			}
 		},
 		setPhotoList: (state, action) => {
