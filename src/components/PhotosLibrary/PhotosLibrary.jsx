@@ -45,6 +45,7 @@ const PhotosLibrary = ({ librayFilterOpen, setLibrayFilterOpen }) => {
 	const handleSearch = useCallback(() => {
 		if (searchKeyword.length > 3) {
 			setSearchTerm(searchKeyword);
+			setPage(1);
 		} else {
 			setSearchTerm("");
 		}
