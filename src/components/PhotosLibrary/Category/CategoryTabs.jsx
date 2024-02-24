@@ -4,11 +4,15 @@ import { setCategory } from "../../../redux/features/photoLibrary";
 import classNames from "classnames";
 import { categories } from "../../../constants/constant-data";
 
-const CategoryTabs = ({ photosLibrarySidebar }) => {
+const CategoryTabs = ({ photosLibrarySidebar, setPage }) => {
 	const dispatch = useDispatch();
 	//   const category = useSelector((state) => state.photo);
 	// const category = useSelector((state) => state.photo);
 	const { category } = useSelector((state) => state.photo);
+	const categoryHandler = (value) => {
+		dispatch(setCategory(value));
+		setPage(1);
+	};
 	console.log("category~", category);
 	return (
 		<div
@@ -24,7 +28,7 @@ const CategoryTabs = ({ photosLibrarySidebar }) => {
 				return (
 					<div
 						key={_cat.id}
-						onClick={() => dispatch(setCategory(_cat.value))}
+						onClick={() => categoryHandler(_cat.value)}
 						className={`tab-item w-full flex flex-row items-center justify-start space-x-2 ${
 							category.includes(_cat.value)
 								? "bg-primaryColor text-white"

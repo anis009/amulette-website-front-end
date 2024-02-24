@@ -126,7 +126,7 @@ const PhotosLibrary = ({ librayFilterOpen, setLibrayFilterOpen }) => {
 			<div className="custom-container flex flex-col items-start justify-between md:space-x-8 md:bg-white bg-[#fdfdfd] photos-library md:flex-row">
 				<div className="col-left md:w-4/12 lg:w-3/12 px-7 py-7 md:block hidden rounded-3xl border border-[#979898]">
 					<License />
-					<Category photosLibrarySidebar={false} />
+					<Category setPage={setPage} photosLibrarySidebar={false} />
 				</div>
 
 				<div className="col-right w-full md:w-8/12  lg:w-9/12 md:rounded-3xl  md:border border-[#979898] px-0 md:px-7 py-0 sm:py-4 md:py-7">

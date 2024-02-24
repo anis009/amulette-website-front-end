@@ -1,10 +1,10 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { MdArrowDropDown } from "react-icons/md";
-import { MdArrowDropUp } from "react-icons/md";
 import CategoryTabs from "./CategoryTabs";
-import React from "react";
 
-const Category = ({ photosLibrarySidebar }) => {
+const Category = ({ photosLibrarySidebar, setPage }) => {
 	const [isCategoryOpen, setIsCategoryOpen] = useState(true);
 
 	return (
@@ -17,7 +17,12 @@ const Category = ({ photosLibrarySidebar }) => {
 					<div className="title font-semibold">Category</div>
 					<MdArrowDropDown />
 				</div>
-				{isCategoryOpen && <CategoryTabs photosLibrarySidebar={photosLibrarySidebar} />}
+				{isCategoryOpen && (
+					<CategoryTabs
+						setPage={setPage}
+						photosLibrarySidebar={photosLibrarySidebar}
+					/>
+				)}
 			</div>
 		</div>
 	);
