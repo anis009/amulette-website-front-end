@@ -20,12 +20,16 @@ const Pagination = ({ setPage, size, page }) => {
 
   const prevHandler = () => {
     if (page > 1) {
+      // Scroll to the top of the page
+      window.scrollTo({ top: 0, behavior: "smooth" });
       setPage(page - 1);
     }
   };
 
   const nextHandler = () => {
     if (page < pages) {
+      // Scroll to the top of the page
+      window.scrollTo({ top: 0, behavior: "smooth" });
       setPage(page + 1);
     }
   };
