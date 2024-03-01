@@ -14,178 +14,178 @@ import { MoonLoader } from "react-spinners";
 
 // eslint-disable-next-line react/prop-types
 const PhotosLibrary = ({ librayFilterOpen, setLibrayFilterOpen }) => {
-	const [searchKeyword, setSearchKeyword] = useState("");
-	const [searchTerm, setSearchTerm] = useState("");
-	const [page, setPage] = useState(1);
+  const [searchKeyword, setSearchKeyword] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [page, setPage] = useState(1);
 
-	// const [filteredPhotos, setFilteredPhotos] = useState(photos);
-	const { license, category } = useSelector((state) => state.photo);
-	const dispatch = useDispatch();
+  // const [filteredPhotos, setFilteredPhotos] = useState(photos);
+  const { license, category } = useSelector((state) => state.photo);
+  const dispatch = useDispatch();
 
-	const [getAllPhotos, { isSuccess, data: photos, isLoading }] =
-		useGetAllPhotosMutation();
-	console.log(isSuccess, photos);
-	useEffect(() => {
-		const fetchPhotos = async () => {
-			try {
-				await getAllPhotos({
-					categories: category,
-					limit: 16,
-					page: page,
-					type: license,
-					searchTerm: searchTerm,
-				});
-			} catch (error) {
-				console.log(error);
-			}
-		};
-		fetchPhotos();
-	}, [category, getAllPhotos, license, page, searchTerm]);
+  const [getAllPhotos, { isSuccess, data: photos, isLoading }] =
+    useGetAllPhotosMutation();
+  console.log(isSuccess, photos);
+  useEffect(() => {
+    const fetchPhotos = async () => {
+      try {
+        await getAllPhotos({
+          categories: category,
+          limit: 16,
+          page: page,
+          type: license,
+          searchTerm: searchTerm,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchPhotos();
+  }, [category, getAllPhotos, license, page, searchTerm]);
 
-	const handleSearch = useCallback(() => {
-		if (searchKeyword.length > 3) {
-			setSearchTerm(searchKeyword);
-			setPage(1);
-		} else {
-			setSearchTerm("");
-		}
-	}, [searchKeyword]);
+  const handleSearch = useCallback(() => {
+    if (searchKeyword.length > 3) {
+      setSearchTerm(searchKeyword);
+      setPage(1);
+    } else {
+      setSearchTerm("");
+    }
+  }, [searchKeyword]);
 
-	useEffect(() => {
-		handleSearch();
-	}, [handleSearch]);
+  useEffect(() => {
+    handleSearch();
+  }, [handleSearch]);
 
-	const keyWordTypeHandler = (e) => {
-		setSearchKeyword(e.target.value);
-	};
+  const keyWordTypeHandler = (e) => {
+    setSearchKeyword(e.target.value);
+  };
 
-	// const searchPhotos = useCallback(
-	// 	(photos, searchTerm) => {
-	// 		// Convert the search term to lower case for case-insensitive comparison
-	// 		const lowerCaseSearchTerm = searchTerm.toLowerCase();
-	// 		// Filter the photos based on the search term
-	// 		const filteredPhotos = photos.filter((photo) => {
-	// 			// Check if the search term is included in the title, description, or metaData
-	// 			// Convert each field to lower case to ensure case-insensitive comparison
-	// 			const titleMatch = photo.title
-	// 				.toLowerCase()
-	// 				.includes(lowerCaseSearchTerm);
-	// 			const descriptionMatch = photo.description
-	// 				.toLowerCase()
-	// 				.includes(lowerCaseSearchTerm);
-	// 			const metaDataMatch = photo.metaData
-	// 				.toLowerCase()
-	// 				.includes(lowerCaseSearchTerm);
-	// 			const matchedCat = photo.category.includes(category);
-	// 			const matchedLicense = photo.license.includes(license);
-	// 			// Return true if the search term matches any of the fields, causing this photo to be included in the filter result
-	// 			return (
-	// 				titleMatch ||
-	// 				descriptionMatch ||
-	// 				metaDataMatch ||
-	// 				matchedCat ||
-	// 				matchedLicense
-	// 			);
-	// 		});
+  // const searchPhotos = useCallback(
+  // 	(photos, searchTerm) => {
+  // 		// Convert the search term to lower case for case-insensitive comparison
+  // 		const lowerCaseSearchTerm = searchTerm.toLowerCase();
+  // 		// Filter the photos based on the search term
+  // 		const filteredPhotos = photos.filter((photo) => {
+  // 			// Check if the search term is included in the title, description, or metaData
+  // 			// Convert each field to lower case to ensure case-insensitive comparison
+  // 			const titleMatch = photo.title
+  // 				.toLowerCase()
+  // 				.includes(lowerCaseSearchTerm);
+  // 			const descriptionMatch = photo.description
+  // 				.toLowerCase()
+  // 				.includes(lowerCaseSearchTerm);
+  // 			const metaDataMatch = photo.metaData
+  // 				.toLowerCase()
+  // 				.includes(lowerCaseSearchTerm);
+  // 			const matchedCat = photo.category.includes(category);
+  // 			const matchedLicense = photo.license.includes(license);
+  // 			// Return true if the search term matches any of the fields, causing this photo to be included in the filter result
+  // 			return (
+  // 				titleMatch ||
+  // 				descriptionMatch ||
+  // 				metaDataMatch ||
+  // 				matchedCat ||
+  // 				matchedLicense
+  // 			);
+  // 		});
 
-	// 		// Return the filtered array of photos
-	// 		return filteredPhotos;
-	// 	},
-	// 	[category, license]
-	// );
+  // 		// Return the filtered array of photos
+  // 		return filteredPhotos;
+  // 	},
+  // 	[category, license]
+  // );
 
-	useMemo(() => {
-		if (category?.length === 0) {
-			dispatch(setCategory("all"));
-		}
-	}, [category?.length, dispatch]);
-	// useEffect(() => {
-	// 	console.log("side-bar-open", librayFilterOpen);
-	// }, [librayFilterOpen]);
+  useMemo(() => {
+    if (category?.length === 0) {
+      dispatch(setCategory("all"));
+    }
+  }, [category?.length, dispatch]);
+  // useEffect(() => {
+  // 	console.log("side-bar-open", librayFilterOpen);
+  // }, [librayFilterOpen]);
 
-	// useEffect(() => {
-	// 	let _tempPhotos = photos;
-	// 	if (license !== "all") {
-	// 		_tempPhotos = _tempPhotos.filter((_it) => _it.license === license);
-	// 	}
-	// 	if (!category.includes("all")) {
-	// 		_tempPhotos = _tempPhotos.filter((_it) =>
-	// 			category.includes(_it.category)
-	// 		);
-	// 	}
-	// 	const _searched = searchPhotos(_tempPhotos, searchKeyword);
-	// 	setFilteredPhotos(_searched);
-	// }, [searchKeyword, license, category, searchPhotos]);
+  // useEffect(() => {
+  // 	let _tempPhotos = photos;
+  // 	if (license !== "all") {
+  // 		_tempPhotos = _tempPhotos.filter((_it) => _it.license === license);
+  // 	}
+  // 	if (!category.includes("all")) {
+  // 		_tempPhotos = _tempPhotos.filter((_it) =>
+  // 			category.includes(_it.category)
+  // 		);
+  // 	}
+  // 	const _searched = searchPhotos(_tempPhotos, searchKeyword);
+  // 	setFilteredPhotos(_searched);
+  // }, [searchKeyword, license, category, searchPhotos]);
 
-	// TODO:: sidebar open handler
-	const sideBarHandler = () => {
-		setLibrayFilterOpen((prev) => !prev);
-	};
+  // TODO:: sidebar open handler
+  const sideBarHandler = () => {
+    setLibrayFilterOpen((prev) => !prev);
+  };
 
-	return (
-		<div className="photos-library-wrapper ">
-			<div className="custom-container flex flex-col items-start justify-between md:space-x-8 md:bg-white bg-[#fdfdfd] photos-library md:flex-row">
-				<div className="col-left md:w-4/12 lg:w-3/12 px-7 py-7 md:block hidden rounded-3xl border border-[#979898]">
-					<License />
-					<Category setPage={setPage} photosLibrarySidebar={false} />
-				</div>
+  return (
+    <div className="photos-library-wrapper ">
+      <div className="custom-container flex flex-col items-start justify-between md:space-x-8 md:bg-white bg-[#fdfdfd] photos-library md:flex-row">
+        <div className="col-left md:w-4/12 lg:w-3/12 px-7 py-7 md:block hidden rounded-3xl border border-[#979898]">
+          <License />
+          <Category setPage={setPage} photosLibrarySidebar={false} />
+        </div>
 
-				<div className="col-right w-full md:w-8/12  lg:w-9/12 md:rounded-3xl  md:border border-[#979898] px-0 md:px-7 py-0 sm:py-4 md:py-7">
-					<h3 className="text-xl lg:text-[25px] font-bold">
-						<span className="text-[#25282B">Explore</span>
-						<span className="text-primaryColor"> Diverse Photos</span>
-					</h3>
-					<p className="text-sm lg:text-base leading-[26px] lg:leading-7 font-normal text-[#25282B] my-2">
-						Dive into our extensive library of captivating photos. From stunning
-						landscapes to adorable pets, discover a world of creativity and
-						inspiration.
-					</p>
-					<div className="relative flex items-center justify-between mt-4 search-wrapper">
-						<PhotosLibrarySidebar
-							sideBarHandler={sideBarHandler}
-							librayFilterOpen={librayFilterOpen}
-						/>
+        <div className="col-right w-full md:w-8/12  lg:w-9/12 md:rounded-3xl  md:border border-[#979898] px-0 md:px-7 py-0 sm:py-4 md:py-7">
+          <h3 className="text-xl lg:text-[25px] font-bold">
+            <span className="text-[#25282B">Explore</span>
+            <span className="text-primaryColor"> Diverse Photos</span>
+          </h3>
+          <p className="text-sm lg:text-base leading-[26px] lg:leading-7 font-normal text-[#25282B] my-2">
+            Dive into our extensive library of captivating photos. From stunning
+            landscapes to adorable pets, discover a world of creativity and
+            inspiration.
+          </p>
+          <div className="relative flex items-center justify-between mt-4 search-wrapper">
+            <PhotosLibrarySidebar
+              sideBarHandler={sideBarHandler}
+              librayFilterOpen={librayFilterOpen}
+            />
 
-						<div
-							onClick={sideBarHandler}
-							className="block px-4 py-2 rounded-full cursor-pointer md:hidden bg-primaryColor "
-						>
-							<HiAdjustmentsHorizontal className="w-8 h-8 text-white" />
-						</div>
+            <div
+              onClick={sideBarHandler}
+              className="block px-4 py-2 rounded-full cursor-pointer md:hidden bg-primaryColor "
+            >
+              <HiAdjustmentsHorizontal className="w-8 h-8 text-white" />
+            </div>
 
-						<div className="search border w-full flex md:ml-0 ml-3 flex-row items-center justify-start space-x-2.5 border-[#DADADA] rounded-3xl px-6 py-3  ">
-							<IoSearchSharp color="#F65F19" size={18} />{" "}
-							<input
-								onChange={keyWordTypeHandler}
-								value={searchKeyword}
-								className="w-[85%] focus:border-0 indent-3 outline-none "
-								type="text"
-								placeholder="Search"
-							/>
-						</div>
-					</div>
-					{/* photos section columns-3 lg:columns-4 */}
-					{isLoading && (
-						<div className="flex items-center justify-center w-full mt-[20px]">
-							<MoonLoader color="#F65F19" className="mx-auto" />
-						</div>
-					)}
-					<div className="grid grid-cols-2 gap-5 mt-6 overflow-hidden sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4">
-						{photos &&
-							photos?.data?.map((photo, index) => (
-								<PhotoCard key={index} photo={photo} />
-							))}
-					</div>
-					{photos && photos?.data.length === 0 && (
-						<div className="text-center">No Photos to show.</div>
-					)}
-					{photos && photos?.data.length > 0 && (
-						<Pagination setPage={setPage} size={photos?.size} page={page} />
-					)}
-				</div>
-			</div>
-		</div>
-	);
+            <div className="search border w-full flex md:ml-0 ml-3 flex-row items-center justify-start space-x-2.5 border-[#DADADA] rounded-3xl px-6 py-3  ">
+              <IoSearchSharp color="#F65F19" size={18} />{" "}
+              <input
+                onChange={keyWordTypeHandler}
+                value={searchKeyword}
+                className="w-[85%] focus:border-0 indent-3 outline-none "
+                type="text"
+                placeholder="Search"
+              />
+            </div>
+          </div>
+          {/* photos section columns-3 lg:columns-4 */}
+          {isLoading && (
+            <div className="flex items-center justify-center w-full mt-[20px]">
+              <MoonLoader color="#F65F19" className="mx-auto" />
+            </div>
+          )}
+          <div className="grid grid-cols-2 gap-5 mt-6 overflow-hidden sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4">
+            {photos &&
+              photos?.data?.map((photo, index) => (
+                <PhotoCard key={index} photo={photo} />
+              ))}
+          </div>
+          {photos && photos?.data.length === 0 && (
+            <div className="text-center">No Photos to show.</div>
+          )}
+          {photos && photos?.data.length > 0 && (
+            <Pagination setPage={setPage} size={photos?.size} page={page} />
+          )}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default PhotosLibrary;
