@@ -1,3 +1,21 @@
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 1539px) {
+  .description-text-features {
+    font-size: 15px !important;
+  }
+  .text-features {
+    font-size: 20px !important;
+  }
+}
+
+@media (max-width: 120px) {
+  .description-text-features {
+    font-size: 12px !important;
+  }
+  .text-features {
+    font-size: 16px !important;
+  }
 }
