@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { diversPhotos, ideas, processSteps } from "../constants/constant-data";
 import cbg1 from "../assets/cbg1.png";
 import cbg2 from "../assets/cbg2.png";
@@ -72,9 +72,7 @@ const ProcessSteps = () => {
         backgroundOrigin: "center",
       }}
     >
-      <div
-        className=" custom-container pb-[60px]"
-      >
+      <div className=" custom-container pb-[60px]">
         {processSteps.map((step, index) => {
           return (
             <div
@@ -88,7 +86,11 @@ const ProcessSteps = () => {
               key={step.id}
             >
               <div className="flex justify-center items-center">
-                <img src={step.subImage} className="lg:w-auto w-[39px]" alt="" />
+                <img
+                  src={step.subImage}
+                  className="lg:w-auto w-[39px]"
+                  alt=""
+                />
                 <div className="lg:ml-[20px] ml-[2px]">
                   <div className="flex flex-row items-center justify-start">
                     <h3 className="text-[#000000]  whitespace-nowrap font-semibold lg:text-[25px] text-[14.24px] leading-[42px]">
@@ -112,7 +114,6 @@ const ProcessSteps = () => {
         })}
       </div>
     </div>
-    
   );
 };
 // grid-cols-[repeat(5,minmax(232px,1fr))]
@@ -128,6 +129,7 @@ const DiversePhotos = () => {
           limit: 20,
           page: 1,
           type: "all",
+          status: "Pending",
         });
       } catch (error) {
         console.log(error);
@@ -148,9 +150,21 @@ const DiversePhotos = () => {
           <span className="text-primaryColor">of Our Community</span>
         </h1>
         <div className="grid lg:grid-cols-5 grid-cols-3 lg:gap-[38px] gap-[12px] ">
-          {diversPhotos.map((item) => {
+          {photos &&
+            photos?.data.map((item) => {
+              return (
+                <div key={item._id}>
+                  <img
+                    src={item?.image}
+                    className="mx-auto rounded-md"
+                    alt={item?.name}
+                  />
+                </div>
+              );
+            })}
+          {/* {diversPhotos.map((item) => {
             return (
-              <div key={item.id} className=''>
+              <div key={item.id} className="">
                 <img
                   src={item.image}
                   className="mx-auto"
@@ -158,9 +172,8 @@ const DiversePhotos = () => {
                   key={item.id}
                 />
               </div>
-              
             );
-          })}
+          })} */}
         </div>
         <div className="text-center mt-[49px]">
           <button className="w-[177px] h-[49px] bg-primaryColor rounded-3xl text-white">
