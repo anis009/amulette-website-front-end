@@ -150,7 +150,7 @@ export const processSteps = [
   },
   {
     id: 3,
-    title: "Get Involved in this journey",
+    title: "Get Involved In This Journey",
     subTitle:
       "Join our community and become part of the Amulette family! Share your own images, connect with like-minded individuals, and be inspired by the stories of others. Spread love and happiness!",
     image: "Images/Community/Steps/three.png",
@@ -188,23 +188,23 @@ export const diversPhotos = [
     image: "Images/Community/DiversePhotos/8.png",
   },
   {
-    id: 9,
+    id: 8,
     image: "Images/Community/DiversePhotos/9.png",
   },
   {
-    id: 10,
+    id: 9,
     image: "Images/Community/DiversePhotos/10.png",
   },
   {
-    id: 11,
+    id: 10,
     image: "Images/Community/DiversePhotos/11.png",
   },
   {
-    id: 12,
+    id: 11,
     image: "Images/Community/DiversePhotos/12.png",
   },
   {
-    id: 13,
+    id: 12,
     image: "Images/Community/DiversePhotos/13.png",
   },
 ];

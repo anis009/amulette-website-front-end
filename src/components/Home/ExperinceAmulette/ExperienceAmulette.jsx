@@ -21,24 +21,24 @@ const ExperienceAmulette = () => {
             technology meets personal expression, seamlessly connecting moments
             and memories.
           </p>
-          <ul className="service-list flex flex-col items-start justify-center space-y-5 text-sm lg:text-base xl:text-lg mt-[34px]">
+          <ul className="service-list flex flex-col items-start justify-center space-y-5 text-sm xl:text-base mt-[34px]">
             <li className="flex flex-row items-center justify-center space-x-3.5">
               <img className="" src="Images/ExperienceAmulette/check.svg" />
-              <span className="flex items-center gap-x-2">
+              <span className="">
                 <span className="text-black font-semibold">Memories in Motion: </span>
                 <span className="font-semibold text-[rgb(0,0,0,0.5)]">Your Photos, Your Charms</span>
               </span>
             </li>
             <li className="flex flex-row items-center justify-center space-x-3.5">
               <img className="" src="Images/ExperienceAmulette/check.svg" />
-              <span className="flex items-center gap-x-2">
+              <span className="">
                 <span className="text-black font-semibold">Capture & Commemorate: </span>
                 <span className="font-semibold text-[rgb(0,0,0,0.5)]">Screenshots to Sentiments</span>
               </span>
             </li>
             <li className="flex flex-row items-center justify-center space-x-3.5">
               <img className="" src="Images/ExperienceAmulette/check.svg" />
-              <span className="flex items-center gap-x-2">
+              <span className="">
                 <span className="text-black font-semibold">Mood Made Visual: </span>
                 <span className="font-semibold text-[rgb(0,0,0,0.5)]">Library Picks for Personal Expression</span>
               </span>
