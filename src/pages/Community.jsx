@@ -47,7 +47,7 @@ const Idea = () => {
 
 const ProcessStepsImage = () => {
   return (
-    <div className="custom-container mt-[70px]">
+    <div className="custom-container my-[70px]">
       <img
         src="Images/Community/img-steps.png"
         className="w-full lg:block hidden"
@@ -78,7 +78,7 @@ const ProcessSteps = () => {
           return (
             <div
               className={classNames(
-                "flex pt-5 lg:pt-8 xl:pt-10 flex-col-reverse gap-x-10 md:gap-x-20",
+                "flex pt-10 flex-col-reverse gap-x-10 md:gap-x-20",
                 {
                   "md:flex-row": index % 2 === 0,
                   "md:flex-row-reverse": index % 2 === 1,
@@ -89,19 +89,20 @@ const ProcessSteps = () => {
               <div className="flex md:w-1/2 justify-center items-center">
                 <img
                   src={step.subImage}
-                  className="lg:w-auto w-[39px]"
+                  className="h-[50px] lg:h-auto lg:w-auto"
                   alt=""
                 />
                 <div className=" ml-3 lg:ml-5">
                   <div className="flex flex-row items-center justify-start">
                     <h3 className="text-[#000000]  whitespace-nowrap font-semibold text-[14.24px] md:text-[18px] lg:text-[22px] leading-[42px]">
                       {step.title}
+                      {index === 1 && (
+                        <strong className="lg:text-[16px] text-[12px] ml-[1px] whitespace-nowrap">
+                          (Coming Soon!)
+                        </strong>
+                      )}
                     </h3>
-                    {index === 1 && (
-                      <strong className="lg:text-[16px] text-[12px] ml-[1px] whitespace-nowrap">
-                        (Coming Soon!)
-                      </strong>
-                    )}
+                    
                   </div>
                   <p className="text-[#777777]  font-normal text-[12px] md:text-[14px] lg:text-[18px] xl:text-[20px] lg:leading-[36px] leading-[20px]">
                     {step.subTitle}

@@ -12,7 +12,7 @@ const DesktopFooter = () => {
           height={55}
           alt="Amulette logo"
         />
-        <p className="font-Poppins text-xs lg:text-lg px-5 lg:px-0 font-normal leading-8 tracking-[0.129px]">
+        <p className="font-Poppins text-[12px] lg:text-[18px] px-5 lg:px-0 font-normal leading-10 tracking-[0.129px]">
           Personalized Charms at Your Fingertips.
           Unlock Your Unique Style, Customized Charms for Every Moment.
         </p>
