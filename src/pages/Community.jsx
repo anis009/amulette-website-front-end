@@ -1,7 +1,8 @@
+// @ts-nocheck
 import React from "react";
 import { diversPhotos, ideas, processSteps } from "../constants/constant-data";
-import cbg1 from "../assets/cbg1.png";
-import cbg2 from "../assets/cbg2.png";
+// import cbg1 from "../assets/cbg1.png";
+// import cbg2 from "../assets/cbg2.png";
 import classNames from "classnames";
 import { useGetAllPhotosMutation } from "../redux/Api/photoApi";
 import { useEffect } from "react";
@@ -22,19 +23,19 @@ const CommunityTitle = () => {
 
 const Idea = () => {
   return (
-    <div className="grid lg:grid-cols-4 grid-cols-2   custom-container gap-[67px] mt-[47px]">
+    <div className="grid lg:grid-cols-4 grid-cols-2 custom-container gap-x-5 lg:gap-x-10 gap-y-10 lg:gap-y-20 mt-[47px]">
       {ideas.map((item) => {
         return (
           <div key={item.id} className="text-center">
-            <h3 className="lg:leading-[23px] leading-[16px] font-semibold text-[#445555] lg:text-[22px] text-[14px]">
+            <h3 className="lg:leading-[23px] leading-[16px] font-semibold text-[#445555] text-base md:text-lg lg:text-[22px]">
               {item.name}
             </h3>
             <img
-              className="w-[115px] h-[115px] mt-[30px] mx-auto"
+              className=" w-20 md:w-[100px] lg:w-[115px] h-20 md:h-[100px] lg:h-[115px] mt-5 lg:mt-8 mx-auto"
               src={item.photo}
               alt={item.name}
             />
-            <p className="lg:text-[18px] text-[11px] font-normal mt-[17px] lg:leading-[35.68px] leading-5 text-[#445555]">
+            <p className="text-sm md:text-base lg:text-[18px] font-normal mt-[17px] lg:leading-[35.68px] leading-5 text-[#445555]">
               {item.description}
             </p>
           </div>
@@ -53,7 +54,7 @@ const ProcessStepsImage = () => {
         alt=""
       />
       <img
-        src="Images/Community/responsive-process-image.png"
+        src="Images/Community/community-mobile-bg.png"
         className="w-full block lg:hidden"
         alt=""
       />
@@ -64,9 +65,9 @@ const ProcessStepsImage = () => {
 const ProcessSteps = () => {
   return (
     <div
-      className="container-wrapper"
+      className={`container-wrapper bg-[url('/Images/mobile-bg-2.png')] md:bg-[url('/Images/cbg1.png'),url('/Images/cbg2.png')]`}
       style={{
-        backgroundImage: `url(${cbg1}),url(${cbg2})`,
+        // backgroundImage: `url(${cbg1}),url(${cbg2})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundOrigin: "center",
@@ -77,23 +78,23 @@ const ProcessSteps = () => {
           return (
             <div
               className={classNames(
-                "flex pt-[37px] lg:gap-[107px] gap-[50px] flex-col-reverse",
+                "flex pt-5 lg:pt-8 xl:pt-10 flex-col-reverse gap-x-10 md:gap-x-20",
                 {
-                  "lg:flex-row": index % 2 === 0,
-                  "lg:flex-row-reverse": index % 2 === 1,
+                  "md:flex-row": index % 2 === 0,
+                  "md:flex-row-reverse": index % 2 === 1,
                 }
               )}
               key={step.id}
             >
-              <div className="flex justify-center items-center">
+              <div className="flex md:w-1/2 justify-center items-center">
                 <img
                   src={step.subImage}
                   className="lg:w-auto w-[39px]"
                   alt=""
                 />
-                <div className="lg:ml-[20px] ml-[2px]">
+                <div className=" ml-3 lg:ml-5">
                   <div className="flex flex-row items-center justify-start">
-                    <h3 className="text-[#000000]  whitespace-nowrap font-semibold lg:text-[25px] text-[14.24px] leading-[42px]">
+                    <h3 className="text-[#000000]  whitespace-nowrap font-semibold text-[14.24px] md:text-[18px] lg:text-[22px] leading-[42px]">
                       {step.title}
                     </h3>
                     {index === 1 && (
@@ -102,13 +103,15 @@ const ProcessSteps = () => {
                       </strong>
                     )}
                   </div>
-                  <p className="text-[#777777]  font-normal lg:text-[20px] text-[12px] lg:leading-[36px] leading-[20px]">
+                  <p className="text-[#777777]  font-normal text-[12px] md:text-[14px] lg:text-[18px] xl:text-[20px] lg:leading-[36px] leading-[20px]">
                     {step.subTitle}
                   </p>
                 </div>
               </div>
 
-              <img className="lg:w-[40%] w-[95%]" src={step.image} alt="" />
+              <div className="img-container md:w-1/2">
+                <img className="w-full" src={step.image} alt="" />
+              </div>
             </div>
           );
         })}
