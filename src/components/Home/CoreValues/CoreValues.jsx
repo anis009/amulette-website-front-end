@@ -34,8 +34,7 @@ const CoreValues = () => {
 						</h3>
 						<img src="Images/CoreValues/Innovation.svg" alt="" className="h-[100px]"/>
 						<div className="desc text-white text-center text-sm lg:text-lg font-normal leading-6 lg:leading-9">
-							Amulette pioneers wearable tech. The app evolves with cutting-edge
-							features for seamless connectivity.
+							Amulette pioneers digital charm tech. Redefining Personalization with Cutting-Edge E-Paper Display Innovation.
 						</div>
 					</div>
 					<div className="col-right flex flex-col px-0 lg:px-5 py-3 lg:py-0 space-y-6">
@@ -44,8 +43,7 @@ const CoreValues = () => {
 						</h3>
 						<img src="Images/CoreValues/Collaboration.svg" alt="" className="h-[100px]"/>
 						<div className="desc text-white text-center text-sm lg:text-lg font-normal leading-6 lg:leading-9">
-							Connect and create memories. Amulette fosters digital
-							collaboration, enhancing shared experiences
+							Connect and create memories. Amulette redefines the way we carry and share our personal stories.
 						</div>
 					</div>
 				</div>

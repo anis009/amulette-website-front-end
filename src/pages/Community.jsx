@@ -1,3 +1,4 @@
+import React from 'react'
 import { diversPhotos, ideas, processSteps } from "../constants/constant-data";
 import cbg1 from "../assets/cbg1.png";
 import cbg2 from "../assets/cbg2.png";
@@ -9,10 +10,10 @@ import Loading from "../components/Loading/Loading";
 const CommunityTitle = () => {
   return (
     <div className="mt-8 text-center">
-      <h1 className="text-center leading-[51px] text-[24px] font-bold">
+      <h1 className="text-center leading-[51px] text-[25px] font-bold">
         Why Community <span className="text-[#F65F19]">Matters</span>
       </h1>
-      <p className="text-[17px] leading-[27px] mt-[8px] font-normal">
+      <p className="text-[17px] leading-[27px] mt-[8px] font-normal text-headingColor">
         Share Your Creations to the World
       </p>
     </div>
@@ -63,53 +64,58 @@ const ProcessStepsImage = () => {
 const ProcessSteps = () => {
   return (
     <div
+      className="container-wrapper"
       style={{
         backgroundImage: `url(${cbg1}),url(${cbg2})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundOrigin: "center",
       }}
-      className=" custom-container pb-[60px]"
     >
-      {processSteps.map((step, index) => {
-        return (
-          <div
-            className={classNames(
-              "flex pt-[37px] lg:gap-[107px] gap-[50px] flex-col-reverse",
-              {
-                "lg:flex-row": index % 2 === 0,
-                "lg:flex-row-reverse": index % 2 === 1,
-              }
-            )}
-            key={step.id}
-          >
-            <div className="flex justify-center items-center">
-              <img src={step.subImage} className="lg:w-auto w-[39px]" alt="" />
-              <div className="lg:ml-[20px] ml-[2px]">
-                <div className="flex flex-row items-center justify-start">
-                  <h3 className="text-[#000000]  whitespace-nowrap font-semibold lg:text-[25px] text-[14.24px] leading-[42px]">
-                    {step.title}
-                  </h3>
-                  {index === 1 && (
-                    <strong className="lg:text-[16px] text-[12px] ml-[1px] whitespace-nowrap">
-                      (Coming Soon!)
-                    </strong>
-                  )}
+      <div
+        className=" custom-container pb-[60px]"
+      >
+        {processSteps.map((step, index) => {
+          return (
+            <div
+              className={classNames(
+                "flex pt-[37px] lg:gap-[107px] gap-[50px] flex-col-reverse",
+                {
+                  "lg:flex-row": index % 2 === 0,
+                  "lg:flex-row-reverse": index % 2 === 1,
+                }
+              )}
+              key={step.id}
+            >
+              <div className="flex justify-center items-center">
+                <img src={step.subImage} className="lg:w-auto w-[39px]" alt="" />
+                <div className="lg:ml-[20px] ml-[2px]">
+                  <div className="flex flex-row items-center justify-start">
+                    <h3 className="text-[#000000]  whitespace-nowrap font-semibold lg:text-[25px] text-[14.24px] leading-[42px]">
+                      {step.title}
+                    </h3>
+                    {index === 1 && (
+                      <strong className="lg:text-[16px] text-[12px] ml-[1px] whitespace-nowrap">
+                        (Coming Soon!)
+                      </strong>
+                    )}
+                  </div>
+                  <p className="text-[#777777]  font-normal lg:text-[20px] text-[12px] lg:leading-[36px] leading-[20px]">
+                    {step.subTitle}
+                  </p>
                 </div>
-                <p className="text-[#777777]  font-normal lg:text-[20px] text-[12px] lg:leading-[36px] leading-[20px]">
-                  {step.subTitle}
-                </p>
               </div>
-            </div>
 
-            <img className="lg:w-[40%] w-[95%]" src={step.image} alt="" />
-          </div>
-        );
-      })}
+              <img className="lg:w-[40%] w-[95%]" src={step.image} alt="" />
+            </div>
+          );
+        })}
+      </div>
     </div>
+    
   );
 };
-
+// grid-cols-[repeat(5,minmax(232px,1fr))]
 const DiversePhotos = () => {
   const [getAllPhotos, { isSuccess, data: photos, isLoading }] =
     useGetAllPhotosMutation();
@@ -136,20 +142,23 @@ const DiversePhotos = () => {
   console.log("get-community-photos~", photos);
   return (
     <div className="mt-[79px] custom-container ">
-      <div className=" border-[1px] border-[#979898] lg:p-[44px] p-[20px] rounded-md">
+      <div className=" border-[1px] border-[#979898] lg:p-[44px] p-[20px] rounded-2xl xl:rounded-3xl">
         <h1 className="text-[#25282B]  font-bold text-center mb-[35px] text-[25px] leading-[51px]">
           Explore Diverse Photos{" "}
           <span className="text-primaryColor">of Our Community</span>
         </h1>
-        <div className="grid lg:grid-cols-5 grid-cols-3 justify-center lg:gap-[38px] gap-[12px]">
+        <div className="grid lg:grid-cols-5 grid-cols-3 lg:gap-[38px] gap-[12px] ">
           {diversPhotos.map((item) => {
             return (
-              <img
-                src={item.image}
-                className="mx-auto"
-                alt={item.id}
-                key={item.id}
-              />
+              <div key={item.id} className=''>
+                <img
+                  src={item.image}
+                  className="mx-auto"
+                  alt={item.id.toString()}
+                  key={item.id}
+                />
+              </div>
+              
             );
           })}
         </div>

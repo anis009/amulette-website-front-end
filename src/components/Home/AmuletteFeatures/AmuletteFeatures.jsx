@@ -3,6 +3,7 @@ import AmuletteServiceCard from "./AmuletteServiceCard";
 import lottieFiles1 from "../../../assets/lottieflies/Flow 1.json";
 import lottieFiles2 from "../../../assets/lottieflies/Flow 6.json";
 import lottieFiles3 from "../../../assets/lottieflies/Flow 3.json";
+import React from "react";
 
 const AmuletteFeatures = () => {
   const amuletteServices = [
@@ -52,7 +53,7 @@ const AmuletteFeatures = () => {
         </h1>
         <p
           style={{ color: "color: rgba(0, 0, 0, 0.80)" }}
-          className="mt-4 mb-10 text-sm font-normal text-center about-feature sm:text-base lg:text-xl text-menuColor lg:mb-0"
+          className="mt-4 mb-10 text-sm font-normal text-center about-feature sm:text-base lg:text-xl text-[rgb(0,0,0,0.8)] lg:mb-0"
         >
           Empowering individuals to express themselves creatively through
           wearable technology.

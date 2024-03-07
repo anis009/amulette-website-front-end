@@ -26,7 +26,7 @@ const ContactUs = () => {
 						<img src="Images/ContactUs/Contact-Us-Img.svg" width={615} className="mx-auto"/>
 					</div>
 					<div className="flex flex-row items-center justify-start w-full lg:w-1/2 col-right lg:pl-10 xl:pl-20">
-						<div className="flex flex-col items-start justify-start w-full space-y-3 contact-form">
+						<div className="flex flex-col items-start justify-start w-full space-y-4 contact-form">
 							<div className="email-wrapper flex flex-col items-start justify-start w-full">
 								<label className="">
 									Email

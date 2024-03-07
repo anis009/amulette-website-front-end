@@ -12,7 +12,7 @@ const MobileFooter = () => {
           alt="Amulette logo"
         />
         <p className="font-Montserrat text-xs  px-5 font-normal leading-8 tracking-[0.129px] text-center">
-          Express Yourself with Amulette. A compact, stylish, and customizable badge that showcases your unique personality. 
+          Personalized Charms at Your Fingertips. Unlock Your Unique Style, Customized Charms for Every Moment.
         </p>
       </div>
       <div className="about-follow-us w-full px-11 flex flex-row items-center justify-between mt-9 mb-11">
@@ -105,7 +105,7 @@ const MobileFooter = () => {
               height={24}
               alt=""
             />
-            <a href={""}>+123 (315) 820-2008</a>
+            <a href={""}>+123 456 789 10</a>
           </li>
           <li className="flex flex-row items-center justify-start space-x-3">
             <img
