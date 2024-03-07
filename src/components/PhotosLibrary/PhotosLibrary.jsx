@@ -43,7 +43,7 @@ const PhotosLibrary = ({ librayFilterOpen, setLibrayFilterOpen }) => {
   }, [category, getAllPhotos, license, page, searchTerm]);
 
   const handleSearch = useCallback(() => {
-    if (searchKeyword.length > 3) {
+    if (searchKeyword.length >= 2) {
       setSearchTerm(searchKeyword);
       setPage(1);
     } else {
