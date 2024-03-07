@@ -2,6 +2,9 @@ import { diversPhotos, ideas, processSteps } from "../constants/constant-data";
 import cbg1 from "../assets/cbg1.png";
 import cbg2 from "../assets/cbg2.png";
 import classNames from "classnames";
+import { useGetAllPhotosMutation } from "../redux/Api/photoApi";
+import { useEffect } from "react";
+import Loading from "../components/Loading/Loading";
 
 const CommunityTitle = () => {
   return (
@@ -108,6 +111,29 @@ const ProcessSteps = () => {
 };
 
 const DiversePhotos = () => {
+  const [getAllPhotos, { isSuccess, data: photos, isLoading }] =
+    useGetAllPhotosMutation();
+  console.log(isSuccess, photos);
+  useEffect(() => {
+    const fetchPhotos = async () => {
+      try {
+        await getAllPhotos({
+          categories: ["community"],
+          limit: 20,
+          page: 1,
+          type: "all",
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchPhotos();
+  }, [getAllPhotos]);
+
+  if (isLoading) {
+    return <Loading />;
+  }
+  console.log("get-community-photos~", photos);
   return (
     <div className="mt-[79px] custom-container ">
       <div className=" border-[1px] border-[#979898] lg:p-[44px] p-[20px] rounded-md">
