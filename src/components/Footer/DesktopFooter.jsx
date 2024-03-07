@@ -12,8 +12,9 @@ const DesktopFooter = () => {
           height={55}
           alt="Amulette logo"
         />
-        <p className="font-Poppins text-xs lg:text-lg px-5 lg:px-0 font-normal leading-8 tracking-[0.129px]">Express Yourself with Amulette.
-A compact, stylish, and customizable badge that showcases your unique personality. 
+        <p className="font-Poppins text-xs lg:text-lg px-5 lg:px-0 font-normal leading-8 tracking-[0.129px]">
+          Personalized Charms at Your Fingertips.
+          Unlock Your Unique Style, Customized Charms for Every Moment.
         </p>
       </div>
       <div className="about-us">
@@ -66,7 +67,7 @@ A compact, stylish, and customizable badge that showcases your unique personalit
               height={24}
               alt=""
             />
-            <a href={""}>+123 (315) 820-2008</a>
+            <a href={""}>+123 456 789 10</a>
           </li>
           <li className="flex flex-row items-center justify-start">
             <img

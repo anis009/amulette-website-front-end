@@ -11,16 +11,16 @@ const Hero = () => {
           Express Yourself with Amulette
         </h3>
         <div className="heading-section flex flex-col items-start justify-start text-left font-Poppins text-[26px] md:text-[30px]  lg:text-[66px] font-bold text-headingColor mt-5 md:mt-8">
-          <span className="blockk">Your Personal</span>
-          <span className="">Badge of Creativity!</span>
+          <span className="blockk">Personalized Charm</span>
+          <span className="">at Your Fingertips!</span>
         </div>
         <div className="paragram-section w-full sm:w-[70%] lg:w-full flex flex-col items-start justify-start font-Poppins md:text-xl text-headingColor font-normal mt-5 md:mt-8">
           <span className="hidden md:block">
-            A compact, stylish, and customizable badge that
+          Unlock Your Unique Style, Customized Charms for Every Moment
           </span>
-          <span className="hidden md:block mt-2">showcases your unique personality.</span>
+          {/* <span className="hidden md:block mt-2">showcases your unique personality.</span> */}
           <span className="block md:hidden">
-            A compact, stylish, and customizable badge that showcases your unique personality.
+            Unlock Your Unique Style, Customized Charms for Every Moment
           </span>
         </div>
         <div className="buttons flex flex-row items-center justify-center space-x-7 mt-5 md:mt-12">

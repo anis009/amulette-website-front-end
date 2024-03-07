@@ -49,7 +49,7 @@ const OurProducts = ({ isOurProduct = true }) => {
 			<div className="our-products  custom-container">
 				{isOurProduct && (
 					<h1 className="text-xl lg:text-[40px] font-semibold font-Poppins text-center mb-2">
-						<span className="text-primaryColor">Our </span>
+						<span className="text-primaryColor">Amulette </span>
 						<span className="">Products</span>
 					</h1>
 				)}

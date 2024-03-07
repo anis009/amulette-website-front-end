@@ -55,7 +55,7 @@ const ProductCard = ({ product, setShowModal, ourCardHomeCarousel, index }) => {
 					<span className="text-[#1C121F] text-base  lg:text-lg font-semibold">
 						${product.price}
 					</span>
-					<button className="bg-primaryColor text-white w-full sm:w-auto lg:w-full sm:px-10 lg:px-0 py-1.5 lg:py-3.5 rounded-[50px]">
+					<button className="bg-primaryColor text-white w-full sm:w-auto lg:w-full sm:px-10 lg:px-0 py-2 md:py-2.5 rounded-[50px]">
 						<div className="flex flex-row items-center justify-center space-x-1.5">
 							<IoCartOutline className="h-4 w-4" size={16} />{" "}
 							<span className="text-[10px] sm:text-xs font-medium lg:text-sm">Buy Now</span>
