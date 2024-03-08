@@ -156,7 +156,7 @@ const DiversePhotos = () => {
                 <div key={item._id}>
                   <img
                     src={item?.image}
-                    className="mx-auto rounded-md"
+                    className="mx-auto w-full h-[150px] rounded-md"
                     alt={item?.name}
                   />
                 </div>
