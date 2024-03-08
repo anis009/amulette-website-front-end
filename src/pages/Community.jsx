@@ -12,7 +12,7 @@ const CommunityTitle = () => {
   return (
     <div className="mt-8 text-center">
       <h1 className="text-center leading-[51px] text-[25px] font-bold">
-        Why Community <span className="text-[#F65F19]">Matters</span>
+        Introduce <span className="text-[#F65F19]"> Amulette Community</span>
       </h1>
       <p className="text-[17px] leading-[27px] mt-[8px] font-normal text-headingColor">
         Share Your Creations to the World
