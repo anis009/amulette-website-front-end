@@ -11,10 +11,10 @@ import Loading from "../components/Loading/Loading";
 const CommunityTitle = () => {
   return (
     <div className="mt-8 text-center">
-      <h1 className="text-center leading-[51px] text-[25px] font-bold">
-        Introduce <span className="text-[#F65F19]"> Amulette Community</span>
+      <h1 className="text-center leading-[51px] text-xl md:text-[25px] font-bold">
+        Why Community <span className="text-[#F65F19]"> Matters</span>
       </h1>
-      <p className="text-[17px] leading-[27px] mt-[8px] font-normal text-headingColor">
+      <p className="text-sm md:text-base text-lg leading-[27px] mt-[8px] font-normal text-headingColor">
         Share Your Creations to the World
       </p>
     </div>
@@ -145,7 +145,8 @@ const DiversePhotos = () => {
   if (isLoading) {
     return <Loading />;
   }
-  console.log("get-community-photos~", photos);
+  // console.log("get-community-photos~", photos);
+  // lg:grid-cols-[1fr,1fr,1fr,1fr,1fr] grid-cols-[1fr,1fr,1fr]
   return (
     <div className="mt-[79px] custom-container ">
       <div className=" border-[1px] border-[#979898] lg:p-[44px] p-[20px] rounded-2xl xl:rounded-3xl">
@@ -153,16 +154,20 @@ const DiversePhotos = () => {
           Explore Diverse Photos{" "}
           <span className="text-primaryColor">of Our Community</span>
         </h1>
-        <div className="grid lg:grid-cols-5 grid-cols-3 lg:gap-[38px] gap-[12px] ">
+        <div className=" grid grid-cols-[repeat(auto-fit,minmax(110px,1fr))] md:grid-cols-[repeat(auto-fit,minmax(130px,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(150px,1fr))] justify-items-center gap-[10px] md:gap-5 lg:gap-10 ">
           {photos &&
             photos?.data.map((item) => {
               return (
-                <div key={item._id}>
-                  <img
+                <div
+                  key={item._id}
+                  className={`w-[110px] md:w-[130px] lg:w-[150px] h-[110px] md:h-[130px] lg:h-[150px] bg-cover bg-center rounded-lg `}
+                  style={{ backgroundImage: `url('${item?.image}')`}}
+                >
+                  {/* <img
                     src={item?.image}
                     className="mx-auto w-full h-[150px] rounded-md"
                     alt={item?.name}
-                  />
+                  /> */}
                 </div>
               );
             })}
