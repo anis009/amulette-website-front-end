@@ -2,12 +2,14 @@ import { NavLink } from "react-router-dom";
 import { menuItems } from "../../constants/constant-data";
 import { useState } from "react";
 import { AiOutlineCaretDown } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 const DesktopHeader = () => {
   const [lang, setLang] = useState("english");
+  const navigate = useNavigate();
   return (
     <div className="custom-container hidden lg:flex flex-row items-center justify-between py-6 header">
-      <div className="logo">
+      <div onClick={() => navigate()} className="logo cursor-pointer">
         <img src="Images/Header/Logo.svg" alt="amulette logo" />
       </div>
       <div className="header-menu-items">

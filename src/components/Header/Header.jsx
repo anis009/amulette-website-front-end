@@ -9,12 +9,13 @@ import DesktopHeader from "./DesktopHeader";
 import { useEffect, useLayoutEffect, useState } from "react";
 import MobileMenu from "./MobileMenu";
 import { useLocation } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 const Header = ({ librayFilterOpen, setLibrayFilterOpen }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [lang, setLang] = useState("english");
 
   const [windowWidth, setWindowWidth] = useState(0);
+  const navigate = useNavigate();
 
   // scroll to the top at every path changes
   const { pathname } = useLocation();
@@ -79,7 +80,10 @@ const Header = ({ librayFilterOpen, setLibrayFilterOpen }) => {
           </div>
         )}
 
-        <div className="col-middle menu-items">
+        <div
+          onClick={() => navigate()}
+          className="col-middle cursor-pointer menu-items"
+        >
           <img src="Images/Header/Logo.svg" />
         </div>
         <div className="col-right">
