@@ -22,9 +22,8 @@ const PhotosLibrary = ({ librayFilterOpen, setLibrayFilterOpen }) => {
   const { license, category } = useSelector((state) => state.photo);
   const dispatch = useDispatch();
 
-  const [getAllPhotos, { isSuccess, data: photos, isLoading }] =
-    useGetAllPhotosMutation();
-  console.log(isSuccess, photos);
+  const [getAllPhotos, { data: photos, isLoading }] = useGetAllPhotosMutation();
+  // console.log(isSuccess, photos);
   useEffect(() => {
     const fetchPhotos = async () => {
       try {
@@ -34,6 +33,7 @@ const PhotosLibrary = ({ librayFilterOpen, setLibrayFilterOpen }) => {
           page: page,
           type: license,
           searchTerm: searchTerm,
+          status: "Accepted",
         });
       } catch (error) {
         console.log(error);
@@ -59,63 +59,11 @@ const PhotosLibrary = ({ librayFilterOpen, setLibrayFilterOpen }) => {
     setSearchKeyword(e.target.value);
   };
 
-  // const searchPhotos = useCallback(
-  // 	(photos, searchTerm) => {
-  // 		// Convert the search term to lower case for case-insensitive comparison
-  // 		const lowerCaseSearchTerm = searchTerm.toLowerCase();
-  // 		// Filter the photos based on the search term
-  // 		const filteredPhotos = photos.filter((photo) => {
-  // 			// Check if the search term is included in the title, description, or metaData
-  // 			// Convert each field to lower case to ensure case-insensitive comparison
-  // 			const titleMatch = photo.title
-  // 				.toLowerCase()
-  // 				.includes(lowerCaseSearchTerm);
-  // 			const descriptionMatch = photo.description
-  // 				.toLowerCase()
-  // 				.includes(lowerCaseSearchTerm);
-  // 			const metaDataMatch = photo.metaData
-  // 				.toLowerCase()
-  // 				.includes(lowerCaseSearchTerm);
-  // 			const matchedCat = photo.category.includes(category);
-  // 			const matchedLicense = photo.license.includes(license);
-  // 			// Return true if the search term matches any of the fields, causing this photo to be included in the filter result
-  // 			return (
-  // 				titleMatch ||
-  // 				descriptionMatch ||
-  // 				metaDataMatch ||
-  // 				matchedCat ||
-  // 				matchedLicense
-  // 			);
-  // 		});
-
-  // 		// Return the filtered array of photos
-  // 		return filteredPhotos;
-  // 	},
-  // 	[category, license]
-  // );
-
   useMemo(() => {
     if (category?.length === 0) {
       dispatch(setCategory("all"));
     }
   }, [category?.length, dispatch]);
-  // useEffect(() => {
-  // 	console.log("side-bar-open", librayFilterOpen);
-  // }, [librayFilterOpen]);
-
-  // useEffect(() => {
-  // 	let _tempPhotos = photos;
-  // 	if (license !== "all") {
-  // 		_tempPhotos = _tempPhotos.filter((_it) => _it.license === license);
-  // 	}
-  // 	if (!category.includes("all")) {
-  // 		_tempPhotos = _tempPhotos.filter((_it) =>
-  // 			category.includes(_it.category)
-  // 		);
-  // 	}
-  // 	const _searched = searchPhotos(_tempPhotos, searchKeyword);
-  // 	setFilteredPhotos(_searched);
-  // }, [searchKeyword, license, category, searchPhotos]);
 
   // TODO:: sidebar open handler
   const sideBarHandler = () => {
